@@ -1,0 +1,185 @@
+[
+  {
+    "id": "Q01",
+    "question": "Which historical patients share the selected patient's conditions?",
+    "expected_behavior": "Filter diagnoses by requested condition terms; return patient IDs and supporting diagnosis codes.",
+    "supporting_tables": [
+      "diagnoses_icd",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q02",
+    "question": "Which historical patients have a recorded metformin order?",
+    "expected_behavior": "Search prescriptions.csv, not medication administration events.",
+    "supporting_tables": [
+      "prescriptions",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q03",
+    "question": "Which historical patients have a recorded metformin administration?",
+    "expected_behavior": "Search medication_administrations.csv and distinguish it from orders.",
+    "supporting_tables": [
+      "medication_administrations",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q04",
+    "question": "Which patients have glucose measurements in the requested date window?",
+    "expected_behavior": "Filter labevents by label and charttime; return supporting rows.",
+    "supporting_tables": [
+      "labevents",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q05",
+    "question": "Which patients have creatinine measurements in the requested date window?",
+    "expected_behavior": "Filter labevents by label and charttime; return supporting rows.",
+    "supporting_tables": [
+      "labevents",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q06",
+    "question": "Which patients are in the diabetes profile cohort?",
+    "expected_behavior": "Match profile_group exactly and validate membership with an independent pandas filter.",
+    "supporting_tables": [
+      "patients"
+    ]
+  },
+  {
+    "id": "Q07",
+    "question": "Does an absent allergy record mean no known allergies?",
+    "expected_behavior": "No. Absence is missing information; explicit status values must remain distinct.",
+    "supporting_tables": [
+      "allergies"
+    ]
+  },
+  {
+    "id": "Q08",
+    "question": "Which patients have allergy status recorded as unknown?",
+    "expected_behavior": "Return only records with status UNKNOWN; do not merge with NOT_DOCUMENTED or NO_KNOWN_ALLERGIES.",
+    "supporting_tables": [
+      "allergies"
+    ]
+  },
+  {
+    "id": "Q09",
+    "question": "Which historical encounters have an explicitly recorded outcome?",
+    "expected_behavior": "Use outcome_recorded and outcome_status, not discharge_location as a proxy for success.",
+    "supporting_tables": [
+      "admissions"
+    ]
+  },
+  {
+    "id": "Q10",
+    "question": "What is known about current arrivals' outcomes?",
+    "expected_behavior": "Return PENDING with outcome_recorded=0 when no outcome is recorded.",
+    "supporting_tables": [
+      "admissions",
+      "edstays"
+    ]
+  },
+  {
+    "id": "Q11",
+    "question": "Which historical patients are most similar to a new patient by medication orders?",
+    "expected_behavior": "Rank by Jaccard overlap of selected features and show shared medications.",
+    "supporting_tables": [
+      "prescriptions",
+      "diagnoses_icd",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q12",
+    "question": "Which historical patients are most similar using administrations rather than orders?",
+    "expected_behavior": "Use medication_administrations as the medication evidence source.",
+    "supporting_tables": [
+      "medication_administrations",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q13",
+    "question": "Which patients match both a condition and a medication constraint?",
+    "expected_behavior": "Apply all supplied cohort constraints and return supporting diagnosis/order records.",
+    "supporting_tables": [
+      "diagnoses_icd",
+      "prescriptions",
+      "patients"
+    ]
+  },
+  {
+    "id": "Q14",
+    "question": "How many patients meet a profile-only cohort query?",
+    "expected_behavior": "Compare returned membership and count against an independent pandas reference.",
+    "supporting_tables": [
+      "patients"
+    ]
+  },
+  {
+    "id": "Q15",
+    "question": "Can a patient be ranked when the filtered query yields no features?",
+    "expected_behavior": "Return a clear empty-feature state rather than implying clinical similarity.",
+    "supporting_tables": [
+      "patients",
+      "diagnoses_icd",
+      "prescriptions"
+    ]
+  },
+  {
+    "id": "Q16",
+    "question": "Are the top-k similarity results limited to historical patients?",
+    "expected_behavior": "Exclude NEW patients from the candidate set and enforce top_k.",
+    "supporting_tables": [
+      "patients"
+    ]
+  },
+  {
+    "id": "Q17",
+    "question": "Which patients have oxygen saturation measurements?",
+    "expected_behavior": "Search relevant lab/chart measurement labels and provide units/timestamps.",
+    "supporting_tables": [
+      "labevents",
+      "chartevents"
+    ]
+  },
+  {
+    "id": "Q18",
+    "question": "What evidence supports a patient's similarity score?",
+    "expected_behavior": "Show shared feature tokens and record tables used to derive them.",
+    "supporting_tables": [
+      "diagnoses_icd",
+      "prescriptions",
+      "medication_administrations",
+      "labevents",
+      "chartevents",
+      "allergies"
+    ]
+  },
+  {
+    "id": "Q19",
+    "question": "Do discharge destinations establish successful treatment?",
+    "expected_behavior": "No. Display explicit outcome_status separately from discharge_location.",
+    "supporting_tables": [
+      "admissions"
+    ]
+  },
+  {
+    "id": "Q20",
+    "question": "Does a date window change which medication and measurement evidence is included?",
+    "expected_behavior": "Apply the requested window to dated orders/administrations/measurements and disclose limitations for undated conditions.",
+    "supporting_tables": [
+      "prescriptions",
+      "medication_administrations",
+      "labevents",
+      "chartevents",
+      "diagnoses_icd"
+    ]
+  }
+]
