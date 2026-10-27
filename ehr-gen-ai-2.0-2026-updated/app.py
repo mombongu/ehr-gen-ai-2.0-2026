@@ -1,16 +1,177 @@
 """Streamlit UI for a synthetic EHR patient similarity prototype."""
 from pathlib import Path
+
 import streamlit as st
-from retrieval import load_dataset, RetrievalQuery, patient_features, rank_historical_patients, select_cohort, validate_cohort_against_pandas
+
+from retrieval import (
+    RetrievalQuery,
+    load_dataset,
+    patient_features,
+    rank_historical_patients,
+    select_cohort,
+    validate_cohort_against_pandas,
+)
 
 DATA = Path(__file__).parent / "synthetic_mimic_100"
 st.set_page_config(page_title="EHR Patient Comparison", layout="wide")
+
+st.markdown(
+    """
+    <style>
+        :root {
+            --sand: #cdc5b4;
+            --rose: #B59DA4;
+            --stone: #85756E;
+            --mocha: #6D3D14;
+            --espresso: #551B14;
+            --panel: rgba(255, 255, 255, 0.28);
+            --panel-strong: rgba(255, 255, 255, 0.42);
+            --text: #2f1d17;
+            --muted: rgba(47, 29, 23, 0.7);
+        }
+
+        [data-testid="stAppViewContainer"] {
+            background: linear-gradient(135deg, var(--sand) 0%, var(--rose) 100%);
+            color: var(--text);
+        }
+
+        .stApp {
+            background: transparent;
+        }
+
+        .main .block-container {
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--espresso);
+        }
+
+        .dashboard-shell {
+            background: rgba(85, 27, 20, 0.9);
+            border-radius: 26px;
+            padding: 1.5rem 1.5rem 1.1rem;
+            box-shadow: 0 18px 42px rgba(85, 27, 20, 0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        .eyebrow {
+            margin: 0 0 0.35rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .dashboard-header h1 {
+            color: white !important;
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.45rem 0.8rem;
+            background: rgba(205, 197, 180, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .metric-card {
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 1rem 1.1rem;
+            box-shadow: 0 12px 24px rgba(16, 8, 6, 0.08);
+            backdrop-filter: blur(8px);
+        }
+
+        .metric-label {
+            color: var(--mocha);
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .metric-value {
+            margin-top: 0.7rem;
+            font-size: 2.15rem;
+            font-weight: 700;
+            color: var(--espresso);
+        }
+
+        .status-panel {
+            background: rgba(255, 255, 255, 0.24);
+            border: 1px solid rgba(85, 27, 20, 0.1);
+            border-radius: 18px;
+            padding: 1rem 1.1rem;
+            margin-top: 1rem;
+        }
+
+        div[data-testid="stMetric"] {
+            background: var(--panel-strong);
+            border: 1px solid rgba(85, 27, 20, 0.08);
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 10px 20px rgba(85, 27, 20, 0.06);
+        }
+
+        .stDataFrame {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .stSelectbox > div, .stDateInput > div, .stTextInput > div {
+            background: rgba(255, 255, 255, 0.32);
+            border-radius: 12px;
+        }
+
+        .stButton > button {
+            background: linear-gradient(135deg, var(--mocha), var(--espresso));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .stButton > button:hover {
+            filter: brightness(1.08);
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("EHR Patient Comparison")
-st.caption("Synthetic records for software testing only. Not real patient data, not official MIMIC/OMOP, and not for clinical decisions.")
+st.caption(
+    "Synthetic records for software testing only. Not real patient data, not official MIMIC/OMOP, and not for clinical decisions."
+)
 
 if not DATA.exists():
     st.warning("Dataset not found. Run `python generate_synthetic_data.py` first.")
     st.stop()
+
 try:
     data = load_dataset(DATA)
 except Exception as exc:
@@ -20,10 +181,44 @@ except Exception as exc:
 patients = data["patients"]
 new_patients = patients[patients["patient_status"].astype(str).str.upper() == "NEW"]
 historical = patients[patients["patient_status"].astype(str).str.upper() == "HISTORICAL"]
-a, b, c = st.columns(3)
-a.metric("Total patients", len(patients))
-b.metric("New arrivals", len(new_patients))
-c.metric("Historical patients", len(historical))
+
+st.markdown(
+    """
+    <div class="dashboard-shell">
+        <div class="dashboard-header">
+            <div>
+                <p class="eyebrow">Synthetic EHR dashboard</p>
+                <h1>Patient cohort overview</h1>
+            </div>
+            <div class="chip">Live patient comparison</div>
+        </div>
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="metric-label">Total patients</div>
+                <div class="metric-value">{total}</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">New arrivals</div>
+                <div class="metric-value">{new}</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Historical patients</div>
+                <div class="metric-value">{historical_total}</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Profiles</div>
+                <div class="metric-value">{profiles}</div>
+            </div>
+        </div>
+    </div>
+    """.format(
+        total=len(patients),
+        new=len(new_patients),
+        historical_total=len(historical),
+        profiles=len(patients["profile_group"].dropna().unique()),
+    ),
+    unsafe_allow_html=True,
+)
 
 st.divider()
 st.header("1. Select a query patient")
@@ -78,8 +273,10 @@ with col2:
     end_date = st.date_input("End date (optional)", value=None)
 top_k = st.slider("Number of historical matches", 1, 20, 5)
 
+
 def split_terms(text):
     return [part.strip() for part in text.split(",") if part.strip()]
+
 
 query = RetrievalQuery(
     conditions=split_terms(condition_text),
@@ -88,7 +285,8 @@ query = RetrievalQuery(
     profile_group=None if profile == "Any" else profile,
     start_date=start_date.isoformat() if start_date else None,
     end_date=end_date.isoformat() if end_date else None,
-    medication_basis=basis, top_k=top_k,
+    medication_basis=basis,
+    top_k=top_k,
 )
 
 st.subheader("Cohort matching the query")
@@ -98,6 +296,16 @@ st.dataframe(cohort[["subject_id", "patient_status", "profile_group"]], use_cont
 if not query.conditions and not query.medications and not query.measurements and (query.profile_group is not None):
     validation = validate_cohort_against_pandas(data, query, cohort)
     st.write("Profile-only pandas validation:", "PASS" if validation["validated"] else "FAIL", validation)
+
+st.markdown(
+    """
+    <div class="status-panel">
+        <strong>Query snapshot</strong><br>
+        Medication basis: {basis} · Profile: {profile} · Match cap: {top_k}
+    </div>
+    """.format(basis=basis, profile=profile, top_k=top_k),
+    unsafe_allow_html=True,
+)
 
 st.divider()
 st.header("3. Rank similar historical patients")
@@ -128,4 +336,6 @@ else:
             st.subheader("Allergy records")
             st.dataframe(data["allergies"][data["allergies"]["subject_id"].astype(str) == str(selected_historical)], use_container_width=True)
 
-st.caption("Similarity is an experimental record-overlap score, not treatment effectiveness or a clinical recommendation. Time filters apply to dated medication and measurement evidence; condition rows in this synthetic schema are encounter-linked but not independently time-stamped.")
+st.caption(
+    "Similarity is an experimental record-overlap score, not treatment effectiveness or a clinical recommendation. Time filters apply to dated medication and measurement evidence; condition records are not timestamped individually."
+)
