@@ -1,6 +1,7 @@
 """Query-driven cohort selection and patient similarity for synthetic EHR testing."""
 from __future__ import annotations
 from dataclasses import dataclass, field
+import math
 from pathlib import Path
 from typing import Optional
 import pandas as pd
@@ -20,6 +21,7 @@ class RetrievalQuery:
     start_date: Optional[str] = None
     end_date: Optional[str] = None
     medication_basis: str = "orders"  # "orders" or "administrations"
+    similarity_method: str = "jaccard"  # "jaccard" or "idf"
     top_k: int = 5
 
 def load_dataset(data_dir: str | Path) -> dict[str, pd.DataFrame]:
@@ -60,31 +62,55 @@ def _patient_rows(data: dict[str, pd.DataFrame], table: str, pid, query: Retriev
 def patient_features(data: dict[str, pd.DataFrame], pid, query: RetrievalQuery | None = None) -> set[str]:
     query = query or RetrievalQuery()
     features: set[str] = set()
-    for row in _patient_rows(data, "diagnoses_icd", pid, query).to_dict("records"):
-        code = str(row.get("icd_code", "")).strip()
-        if code and (not query.conditions or any(c.lower() in code.lower() or c.lower() in str(row.get("long_title", "")).lower() for c in query.conditions)):
-            features.add("condition:" + code.lower())
-    med_table = "medication_administrations" if query.medication_basis == "administrations" else "prescriptions"
-    med_date = "charttime" if med_table == "medication_administrations" else "starttime"
-    for row in _patient_rows(data, med_table, pid, query, med_date).to_dict("records"):
-        med = str(row.get("drug", "")).strip().lower()
-        if med and (not query.medications or any(m.lower() in med for m in query.medications)):
-            features.add("medication:" + med)
-    for table, date_col in [("labevents", "charttime"), ("chartevents", "charttime")]:
-        for row in _patient_rows(data, table, pid, query, date_col).to_dict("records"):
-            label = str(row.get("label", "")).strip().lower()
-            if label and (not query.measurements or any(m.lower() in label for m in query.measurements)):
-                features.add("measurement:" + label)
-    # Allergy state is represented explicitly. Missing rows are NOT inferred to mean no allergies.
-    allergy_rows = _patient_rows(data, "allergies", pid, query)
-    if not allergy_rows.empty:
-        for row in allergy_rows.to_dict("records"):
-            status = str(row.get("status", "")).strip().upper()
-            name = str(row.get("allergy_name", "")).strip().lower()
-            if status == "KNOWN" and name:
-                features.add("allergy:known:" + name)
-            elif status in {"NO_KNOWN_ALLERGIES", "UNKNOWN", "NOT_DOCUMENTED"}:
-                features.add("allergy_status:" + status.lower())
+    constrained_categories = bool(
+        query.conditions or query.medications or query.measurements
+    )
+    if not constrained_categories or query.conditions:
+        for row in _patient_rows(data, "diagnoses_icd", pid, query).to_dict("records"):
+            code = str(row.get("icd_code", "")).strip()
+            if code and (
+                not query.conditions
+                or any(
+                    term.lower() in code.lower()
+                    or term.lower() in str(row.get("long_title", "")).lower()
+                    for term in query.conditions
+                )
+            ):
+                features.add("condition:" + code.lower())
+    if not constrained_categories or query.medications:
+        med_table = (
+            "medication_administrations"
+            if query.medication_basis == "administrations"
+            else "prescriptions"
+        )
+        med_date = "charttime" if med_table == "medication_administrations" else "starttime"
+        for row in _patient_rows(data, med_table, pid, query, med_date).to_dict("records"):
+            med = str(row.get("drug", "")).strip().lower()
+            if med and (
+                not query.medications
+                or any(term.lower() in med for term in query.medications)
+            ):
+                features.add("medication:" + med)
+    if not constrained_categories or query.measurements:
+        for table, date_col in [("labevents", "charttime"), ("chartevents", "charttime")]:
+            for row in _patient_rows(data, table, pid, query, date_col).to_dict("records"):
+                label = str(row.get("label", "")).strip().lower()
+                if label and (
+                    not query.measurements
+                    or any(term.lower() in label for term in query.measurements)
+                ):
+                    features.add("measurement:" + label)
+    if not constrained_categories:
+        # Allergy state is explicit. Missing rows are NOT inferred as a negative history.
+        allergy_rows = _patient_rows(data, "allergies", pid, query)
+        if not allergy_rows.empty:
+            for row in allergy_rows.to_dict("records"):
+                status = str(row.get("status", "")).strip().upper()
+                name = str(row.get("allergy_name", "")).strip().lower()
+                if status == "KNOWN" and name:
+                    features.add("allergy:known:" + name)
+                elif status in {"NO_KNOWN_ALLERGIES", "UNKNOWN", "NOT_DOCUMENTED"}:
+                    features.add("allergy_status:" + status.lower())
     return features
 
 def jaccard_similarity(a: set[str], b: set[str]) -> float:
@@ -92,27 +118,71 @@ def jaccard_similarity(a: set[str], b: set[str]) -> float:
         return 0.0
     return len(a & b) / len(a | b)
 
+
+def idf_weights(
+    data: dict[str, pd.DataFrame], query: RetrievalQuery | None = None
+) -> dict[str, float]:
+    """Return smoothed inverse document-frequency weights across patients."""
+    patients = data["patients"]
+    feature_query = query or RetrievalQuery()
+    documents = [
+        patient_features(data, pid, feature_query)
+        for pid in patients["subject_id"].tolist()
+    ]
+    document_count = len(documents)
+    if not document_count:
+        return {}
+    frequencies: dict[str, int] = {}
+    for features in documents:
+        for feature in features:
+            frequencies[feature] = frequencies.get(feature, 0) + 1
+    return {
+        feature: math.log((1 + document_count) / (1 + frequency)) + 1
+        for feature, frequency in frequencies.items()
+    }
+
+
+def idf_weighted_jaccard(
+    a: set[str], b: set[str], weights: dict[str, float]
+) -> float:
+    """Compute Jaccard overlap weighted by each feature's inverse document frequency."""
+    union = a | b
+    denominator = sum(weights.get(feature, 1.0) for feature in union)
+    if not denominator:
+        return 0.0
+    numerator = sum(weights.get(feature, 1.0) for feature in a & b)
+    return numerator / denominator
+
+
 def rank_historical_patients(data: dict[str, pd.DataFrame], query_patient_id,
                              query: RetrievalQuery | None = None) -> pd.DataFrame:
     query = query or RetrievalQuery()
     patients = data["patients"].copy()
     historical = patients[patients["patient_status"].astype(str).str.upper() == "HISTORICAL"]
     q_features = patient_features(data, query_patient_id, query)
+    weights = idf_weights(data, query)
     results = []
     for _, candidate in historical.iterrows():
         pid = candidate["subject_id"]
         features = patient_features(data, pid, query)
         shared = sorted(q_features & features)
+        jaccard = jaccard_similarity(q_features, features)
+        idf_score = idf_weighted_jaccard(q_features, features, weights)
         results.append({
             "subject_id": pid,
             "profile_group": candidate.get("profile_group", ""),
-            "similarity": jaccard_similarity(q_features, features),
+            "similarity": idf_score if query.similarity_method == "idf" else jaccard,
+            "similarity_jaccard": jaccard,
+            "similarity_idf": idf_score,
             "shared_features": shared,
             "query_feature_count": len(q_features),
             "candidate_feature_count": len(features),
         })
     if not results:
-        return pd.DataFrame(columns=["subject_id", "profile_group", "similarity", "shared_features"])
+        return pd.DataFrame(columns=[
+            "subject_id", "profile_group", "similarity", "similarity_jaccard",
+            "similarity_idf", "shared_features",
+        ])
     return pd.DataFrame(results).sort_values(
         ["similarity", "subject_id"], ascending=[False, True]
     ).head(max(1, int(query.top_k))).reset_index(drop=True)
@@ -160,14 +230,75 @@ def select_cohort(data: dict[str, pd.DataFrame], query: RetrievalQuery) -> pd.Da
 
 def validate_cohort_against_pandas(data: dict[str, pd.DataFrame], query: RetrievalQuery,
                                    returned: pd.DataFrame) -> dict:
-    """Independent, simple pandas baseline for a profile-only cohort check."""
-    if query.conditions or query.medications or query.measurements or query.start_date or query.end_date:
-        return {"validated": False, "reason": "Reference validator currently supports profile-only queries."}
+    """Independently recompute supported cohort filters with direct pandas operations."""
     expected = data["patients"]
     if query.profile_group:
         expected = expected[expected["profile_group"].astype(str).str.lower() == query.profile_group.lower()]
+
     expected_ids = set(expected["subject_id"].astype(str))
+
+    if query.conditions:
+        diagnoses = data["diagnoses_icd"]
+        codes = diagnoses.get("icd_code", pd.Series("", index=diagnoses.index)).astype(str)
+        titles = diagnoses.get("long_title", pd.Series("", index=diagnoses.index)).astype(str)
+        matching = pd.Series(False, index=diagnoses.index)
+        for term in query.conditions:
+            matching |= codes.str.contains(term, case=False, regex=False, na=False)
+            matching |= titles.str.contains(term, case=False, regex=False, na=False)
+        expected_ids &= set(diagnoses.loc[matching, "subject_id"].astype(str))
+
+    if query.medications:
+        medication_table = (
+            "medication_administrations"
+            if query.medication_basis == "administrations"
+            else "prescriptions"
+        )
+        medications = data.get(medication_table, pd.DataFrame()).copy()
+        if not medications.empty:
+            date_column = "charttime" if medication_table == "medication_administrations" else "starttime"
+            if date_column in medications.columns and (query.start_date or query.end_date):
+                dates = pd.to_datetime(medications[date_column], errors="coerce")
+                if query.start_date:
+                    medications = medications.loc[dates >= pd.Timestamp(query.start_date)]
+                    dates = pd.to_datetime(medications[date_column], errors="coerce")
+                if query.end_date:
+                    upper = pd.Timestamp(query.end_date) + pd.Timedelta(days=1) - pd.Timedelta(microseconds=1)
+                    medications = medications.loc[dates <= upper]
+            drug_names = medications.get(
+                "drug", pd.Series("", index=medications.index)
+            ).astype(str)
+            matching = pd.Series(False, index=medications.index)
+            for term in query.medications:
+                matching |= drug_names.str.contains(term, case=False, regex=False, na=False)
+            expected_ids &= set(medications.loc[matching, "subject_id"].astype(str))
+        else:
+            expected_ids = set()
+
+    if query.measurements:
+        matching_ids: set[str] = set()
+        for table_name in ("labevents", "chartevents"):
+            measurements = data.get(table_name, pd.DataFrame()).copy()
+            if measurements.empty:
+                continue
+            if "charttime" in measurements.columns and (query.start_date or query.end_date):
+                dates = pd.to_datetime(measurements["charttime"], errors="coerce")
+                if query.start_date:
+                    measurements = measurements.loc[dates >= pd.Timestamp(query.start_date)]
+                    dates = pd.to_datetime(measurements["charttime"], errors="coerce")
+                if query.end_date:
+                    upper = pd.Timestamp(query.end_date) + pd.Timedelta(days=1) - pd.Timedelta(microseconds=1)
+                    measurements = measurements.loc[dates <= upper]
+            labels = measurements.get(
+                "label", pd.Series("", index=measurements.index)
+            ).astype(str)
+            matching = pd.Series(False, index=measurements.index)
+            for term in query.measurements:
+                matching |= labels.str.contains(term, case=False, regex=False, na=False)
+            matching_ids |= set(measurements.loc[matching, "subject_id"].astype(str))
+        expected_ids &= matching_ids
+
     actual_ids = set(returned["subject_id"].astype(str))
     return {"validated": expected_ids == actual_ids, "expected_count": len(expected_ids),
             "actual_count": len(actual_ids), "missing_ids": sorted(expected_ids - actual_ids),
-            "unexpected_ids": sorted(actual_ids - expected_ids)}
+            "unexpected_ids": sorted(actual_ids - expected_ids),
+            "expected_ids": sorted(expected_ids), "actual_ids": sorted(actual_ids)}

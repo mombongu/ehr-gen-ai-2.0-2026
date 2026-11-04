@@ -167,6 +167,7 @@ def main():
     rng = random.Random(SEED)
     OUT.mkdir(exist_ok=True)
     patients, admissions, diagnoses, prescriptions, administrations = [], [], [], [], []
+    known_pair_blueprint = {}
     procedures, labs, charts, edstays, triage, allergies, discharges, radiology = ([] for _ in range(8))
     ids = {k: 1 for k in ["adm", "diag", "rx", "admin", "proc", "lab", "chart", "ed", "triage", "allergy", "discharge", "radiology"]}
 
@@ -184,7 +185,14 @@ def main():
             "race_label": race, "synthetic_flag": 1,
         })
 
-        allergy_name, reaction, allergy_status = rng.choice(ALLERGIES)
+        if i == 11 and known_pair_blueprint:
+            allergy_name, reaction, allergy_status = known_pair_blueprint["allergy"]
+        else:
+            allergy_name, reaction, allergy_status = rng.choice(ALLERGIES)
+        if i == 1:
+            known_pair_blueprint["allergy"] = (
+                allergy_name, reaction, allergy_status
+            )
         allergies.append({
             "allergy_id": ids["allergy"], "subject_id": pid, "allergy_name": allergy_name,
             "reaction": reaction, "status": allergy_status, "recorded_time": dt(rng.randint(30, 700)),
@@ -210,12 +218,21 @@ def main():
         })
 
         conditions = build_patient_conditions(profile, rng)
+        if i == 11 and known_pair_blueprint:
+            conditions = list(known_pair_blueprint["conditions"])
+        elif i == 1:
+            known_pair_blueprint["conditions"] = list(conditions)
         for code, label in dict(conditions).items():
             diagnoses.append({"subject_id": pid, "hadm_id": prior_hadm, "seq_num": ids["diag"],
                               "icd_code": code, "icd_version": 10, "long_title": label, "synthetic_flag": 1})
             ids["diag"] += 1
 
         meds_with_freq = build_patient_meds(profile, rng)
+        if i == 11 and known_pair_blueprint:
+            meds_with_freq = list(known_pair_blueprint["medications"])
+        elif i == 1:
+            known_pair_blueprint["medications"] = list(meds_with_freq)
+            known_pair_blueprint["administered_medications"] = set()
         for med, frequency in meds_with_freq:
             rx_id = ids["rx"]
             prescriptions.append({
@@ -224,7 +241,12 @@ def main():
                 "dose_val_rx": rng.choice(["5", "10", "20", "500"]), "dose_unit_rx": "mg",
                 "route": rng.choice(["PO", "IV", "INHALATION"]), "frequency": frequency, "synthetic_flag": 1,
             })
-            if rng.random() < .82:
+            was_administered = (
+                med in known_pair_blueprint.get("administered_medications", set())
+                if i == 11 and known_pair_blueprint
+                else rng.random() < .82
+            )
+            if was_administered:
                 administrations.append({
                     "administration_id": ids["admin"], "prescription_id": rx_id, "subject_id": pid,
                     "hadm_id": prior_hadm, "charttime": start + " 10:00:00", "drug": med,
@@ -232,6 +254,8 @@ def main():
                     "route": "PO", "administration_status": "GIVEN", "frequency": frequency, "synthetic_flag": 1,
                 })
                 ids["admin"] += 1
+                if i == 1:
+                    known_pair_blueprint["administered_medications"].add(med)
             ids["rx"] += 1
 
         for proc in profile["procedures"]:
@@ -309,6 +333,7 @@ def main():
         "SYNTHETIC MIMIC-INSPIRED DATASET\n"
         "100 fictional patients: 10 NEW arrivals and 90 HISTORICAL patients.\n"
         "Not official MIMIC-IV or OMOP CDM; all data are generated for software testing.\n"
+        "Patients 20001 and 20011 form a deterministic known-similar-pair test fixture.\n"
         "Medication orders (prescriptions.csv) are separate from administration events.\n"
         "Medication schedules vary realistically with PRN, once daily, twice daily, and once monthly patterns.\n"
         "Allergy status distinguishes KNOWN, NO_KNOWN_ALLERGIES, UNKNOWN, and NOT_DOCUMENTED.\n"

@@ -1,0 +1,14 @@
+{
+  "k": 5,
+  "date_window": {
+    "start_date": "2023-07-01",
+    "end_date": "2025-06-01"
+  },
+  "known_similar_pairs": [
+    {
+      "new_patient_id": 20001,
+      "historical_patient_id": 20011,
+      "reason": "The deterministic generator gives both patients identical coded conditions, medication orders, medication administration presence, allergy status, and measurement labels."
+    }
+  ]
+}

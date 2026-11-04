@@ -3,10 +3,20 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from itertools import product
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from retrieval import load_dataset, RetrievalQuery, select_cohort, validate_cohort_against_pandas, patient_features, jaccard_similarity
+from retrieval import (
+    RetrievalQuery,
+    idf_weighted_jaccard,
+    load_dataset,
+    patient_features,
+    rank_historical_patients,
+    select_cohort,
+    validate_cohort_against_pandas,
+    jaccard_similarity,
+)
 
 class RetrievalTests(unittest.TestCase):
     @classmethod
@@ -61,6 +71,7 @@ class RetrievalTests(unittest.TestCase):
         result = validate_cohort_against_pandas(self.data, query, cohort)
         self.assertTrue(result["validated"])
         self.assertEqual(result["expected_count"], result["actual_count"])
+        self.assertEqual(result["expected_ids"], result["actual_ids"])
 
     def test_condition_query_returns_matching_patients(self):
         query = RetrievalQuery(conditions=["E11.9"])
@@ -110,9 +121,130 @@ class RetrievalTests(unittest.TestCase):
         self.assertTrue(new_ids.isdisjoint(set(result["subject_id"])))
 
     def test_top_k_is_respected(self):
-        from retrieval import rank_historical_patients
         result = rank_historical_patients(self.data, 20001, RetrievalQuery(top_k=7))
         self.assertLessEqual(len(result), 7)
+
+    def test_pandas_reference_validates_supported_filter_combinations(self):
+        condition_choices = ([], ["E11.9"])
+        medication_choices = ([], ["metformin"])
+        measurement_choices = ([], ["glucose"])
+        profile_choices = (None, "diabetes")
+        date_choices = (
+            (None, None),
+            ("2023-07-01", "2025-06-01"),
+            ("2030-01-01", "2030-12-31"),
+        )
+        for conditions, medications, measurements, profile, dates, basis in product(
+            condition_choices,
+            medication_choices,
+            measurement_choices,
+            profile_choices,
+            date_choices,
+            ("orders", "administrations"),
+        ):
+            query = RetrievalQuery(
+                conditions=conditions,
+                medications=medications,
+                measurements=measurements,
+                profile_group=profile,
+                start_date=dates[0],
+                end_date=dates[1],
+                medication_basis=basis,
+            )
+            returned = select_cohort(self.data, query)
+            result = validate_cohort_against_pandas(self.data, query, returned)
+            self.assertTrue(result["validated"], msg=query)
+
+    def test_filtered_features_only_include_requested_evidence_categories(self):
+        features = patient_features(
+            self.data,
+            20001,
+            RetrievalQuery(medications=["metformin"]),
+        )
+        self.assertTrue(features)
+        self.assertTrue(all(feature.startswith("medication:") for feature in features))
+
+    def test_empty_filtered_features_stay_empty(self):
+        features = patient_features(
+            self.data,
+            20001,
+            RetrievalQuery(
+                conditions=["__no_such_condition__"],
+                medications=["__no_such_medication__"],
+                measurements=["__no_such_measurement__"],
+            ),
+        )
+        self.assertEqual(features, set())
+
+    def test_idf_weighted_jaccard_prefers_rare_shared_features(self):
+        rare_shared = idf_weighted_jaccard(
+            {"rare", "common"}, {"rare", "other"}, {"rare": 4.0, "common": 1.0, "other": 1.0}
+        )
+        common_shared = idf_weighted_jaccard(
+            {"common", "rare"}, {"common", "other"}, {"rare": 4.0, "common": 1.0, "other": 1.0}
+        )
+        self.assertGreater(rare_shared, common_shared)
+        self.assertEqual(idf_weighted_jaccard(set(), set(), {}), 0.0)
+
+    def test_ranked_results_include_both_similarity_scores(self):
+        ranked = rank_historical_patients(
+            self.data, 20001, RetrievalQuery(top_k=5, similarity_method="idf")
+        )
+        self.assertIn("similarity_jaccard", ranked.columns)
+        self.assertIn("similarity_idf", ranked.columns)
+        self.assertTrue((ranked["similarity"] == ranked["similarity_idf"]).all())
+
+    def test_hand_specified_known_pair_is_top_ranked_for_both_medication_bases(self):
+        for basis in ("orders", "administrations"):
+            ranked = rank_historical_patients(
+                self.data,
+                20001,
+                RetrievalQuery(medication_basis=basis, top_k=5),
+            )
+            self.assertEqual(str(ranked.iloc[0]["subject_id"]), "20011")
+
+    def test_twenty_question_evaluator_emits_correctness_for_every_question(self):
+        from evaluate import run_evaluation
+
+        report = run_evaluation()
+        self.assertEqual(report["summary"]["question_count"], 20)
+        self.assertTrue(all(
+            isinstance(question["answer_correct"], bool)
+            for question in report["questions"]
+        ))
+        self.assertGreater(
+            report["new_patient_diversity"]["conditions"]["mean_distinct_per_patient"],
+            0,
+        )
+        self.assertGreater(
+            report["new_patient_diversity"]["medication_orders"]["mean_distinct_per_patient"],
+            0,
+        )
+
+    def test_add_review_item_dialog_opens(self):
+        from streamlit.testing.v1 import AppTest
+
+        app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
+        app.button[0].click().run()
+        self.assertEqual(len(app.get("dialog")), 1)
+        self.assertTrue(any(widget.label == "Item name" for widget in app.text_input))
+        self.assertFalse(app.exception)
+
+    def test_current_arrival_and_historical_demographics_are_displayed(self):
+        from streamlit.testing.v1 import AppTest
+
+        app = AppTest.from_file(str(ROOT / "app.py"), default_timeout=30).run()
+        self.assertEqual(app.subheader[0].value, "Current arrival")
+        rendered_text = "\n".join(str(widget.value) for widget in app.markdown)
+        self.assertIn("Weakness and elevated blood glucose", rendered_text)
+        metrics = {widget.label: widget.value for widget in app.metric}
+        self.assertEqual(metrics["Arrival method"], "EMS")
+        self.assertEqual(metrics["Current status"], "In Progress")
+        self.assertEqual(metrics["Heart rate"], "97 bpm")
+        self.assertEqual(metrics["Blood pressure"], "131/93 mmHg")
+        self.assertIn("Approx. age: 80", rendered_text)
+        self.assertIn("Sex field: F", rendered_text)
+        self.assertFalse(app.exception)
 
 if __name__ == "__main__":
     unittest.main()

@@ -10,9 +10,13 @@ A synthetic-data prototype for query-driven cohort selection, patient similarity
 - Medication orders (`prescriptions.csv`) and administration events (`medication_administrations.csv`) are separate tables.
 - Admissions have explicit `outcome_status` and `outcome_recorded` fields. A discharge destination is not interpreted as successful treatment; current arrivals remain `PENDING`.
 - Query-driven cohort filters support conditions, medications, measurements, profile groups, and date windows.
-- Medication-based similarity can use orders or administrations; condition and measurement features are integrated into one feature-overlap score.
-- A pandas reference check validates profile-only cohort membership.
-- `tests/test_retrieval.py` contains automated checks; `eval_questions.json` defines 20 representative questions, expected behavior, and supporting tables.
+- Medication-based similarity can use orders or administrations; Jaccard and IDF-weighted Jaccard scores are shown together.
+- The historical-patient view shows shared features side by side with recorded values, admissions and outcomes, medication orders, and separately recorded medication administrations.
+- The independent pandas baseline checks all supported combinations of profile, condition, medication, measurement, and date-window filters.
+- A hand-specified synthetic pair is used to compare Jaccard and IDF rankings. The benchmark also reports condition and medication diversity for new patients.
+- `evaluate.py` runs all 20 questions in `eval_questions.json` and writes `EVALUATION_REPORT.md` and `evaluation_results.json`, including expected/retrieved IDs and supporting record samples.
+- Cohort filters are unranked; their P@5/R@5 uses the first five IDs in ascending ID order and is reported separately from the known-pair ranking metrics.
+- The add-review-item dialog is synthetic-only, session-only, manually entered, and not a clinical recommendation or a write to patient records.
 - The Streamlit UI is kept as a standalone baseline. A separate adapter to another dashboard should be added only after confirming the target dashboard's inputs, outputs, and interface.
 
 ## Run locally
@@ -24,6 +28,7 @@ source .venv/bin/activate        # macOS/Linux
 pip install -r requirements.txt
 python generate_synthetic_data.py
 python -m unittest discover -s tests -v
+python evaluate.py
 streamlit run app.py
 ```
 
@@ -39,7 +44,8 @@ Suggested commit message:
 
 1. The query parser is currently a structured UI, not a natural-language clinical question parser.
 2. Condition records in this synthetic schema do not have their own event timestamp; date windows are applied to dated medication and measurement evidence.
-3. The current independent validator fully checks profile-only cohort membership. Extend it with independently written SQL/pandas reference implementations for every filter combination before relying on query results.
-4. The evaluation JSON specifies expected behavior and supporting tables; exact answer fixtures should be added for each generated dataset seed and tested automatically.
-5. Similarity is simple Jaccard overlap. It is not a clinical relevance score, outcome predictor, or treatment-effectiveness measure.
-6. Dashboard integration is intentionally deferred until the baseline is tested and the existing dashboard's contract is known.
+3. There is no converter or agentic-search implementation in this workspace or project archive, so this repository cannot run an end-to-end converter/agent test. No OMOP adapter is included; its need depends on the missing pipeline's input contract.
+4. No RxNorm, SNOMED CT, or LOINC vocabulary resources or MIMIC-IV demo dataset are bundled or configured locally. Confirm authorized resources and intended vocabulary mappings before integrating them.
+5. The benchmark evaluates a deterministic synthetic structured-search baseline, not natural-language question answering. Its P@5/R@5 scores use explicit query fixtures and relevant patient IDs; results do not generalize to a clinical retrieval system.
+6. Local Streamlit is verified. The supplied hosted Streamlit URL redirects unauthenticated access to Streamlit auth, so its app content could not be verified in this session.
+7. Historical records do not include a chief complaint or clinician-authored treatment plan. Diagnoses, orders, administrations, procedures, and outcomes are displayed as recorded context only; they are not recommendations for a new patient.
