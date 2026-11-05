@@ -11,7 +11,9 @@ A synthetic-data prototype for query-driven cohort selection, patient similarity
 - Admissions have explicit `outcome_status` and `outcome_recorded` fields. A discharge destination is not interpreted as successful treatment; current arrivals remain `PENDING`.
 - Query-driven cohort filters support conditions, medications, measurements, profile groups, and date windows.
 - Medication-based similarity can use orders or administrations; Jaccard and IDF-weighted Jaccard scores are shown together.
-- The historical-patient view shows shared features side by side with recorded values, admissions and outcomes, medication orders, and separately recorded medication administrations.
+- Patient comparison is organized into color-coded tabs for conditions, measurements, allergies, and medications, with the selected new and historical patients shown side by side.
+- Every historical patient has an explicit final coded diagnosis linked to that encounter's diagnosis record. The historical view includes a styled timeline of assessments, procedure and medication events, simulated response checks, complications, and disposition.
+- Synthetic response statuses and rationale notes are mock scenario labels only. Causality and actual treatment effectiveness are not established, and the dashboard does not produce treatment recommendations or plans.
 - The independent pandas baseline checks all supported combinations of profile, condition, medication, measurement, and date-window filters.
 - A hand-specified synthetic pair is used to compare Jaccard and IDF rankings. The benchmark also reports condition and medication diversity for new patients.
 - `evaluate.py` runs all 20 questions in `eval_questions.json` and writes `EVALUATION_REPORT.md` and `evaluation_results.json`, including expected/retrieved IDs and supporting record samples.
@@ -48,4 +50,4 @@ Suggested commit message:
 4. No RxNorm, SNOMED CT, or LOINC vocabulary resources or MIMIC-IV demo dataset are bundled or configured locally. Confirm authorized resources and intended vocabulary mappings before integrating them.
 5. The benchmark evaluates a deterministic synthetic structured-search baseline, not natural-language question answering. Its P@5/R@5 scores use explicit query fixtures and relevant patient IDs; results do not generalize to a clinical retrieval system.
 6. Local Streamlit is verified. The supplied hosted Streamlit URL redirects unauthenticated access to Streamlit auth, so its app content could not be verified in this session.
-7. Historical records do not include a chief complaint or clinician-authored treatment plan. Diagnoses, orders, administrations, procedures, and outcomes are displayed as recorded context only; they are not recommendations for a new patient.
+7. Historical records do not include a clinician-authored treatment plan. Generated course notes, diagnoses, orders, administrations, procedures, rationales, response statuses, and outcomes are fictional/descriptive context only; they do not establish treatment effectiveness or causality. This software does not generate care recommendations for a new patient.

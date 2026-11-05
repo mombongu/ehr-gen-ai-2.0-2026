@@ -59,6 +59,47 @@ class RetrievalTests(unittest.TestCase):
         self.assertIn("outcome_status", hist.columns)
         self.assertGreater(hist["outcome_status"].nunique(), 1)
 
+    def test_synthetic_hospital_course_includes_response_complication_and_disposition(self):
+        course = self.data["hospital_course"]
+        self.assertEqual(course["subject_id"].nunique(), 100)
+        self.assertEqual(set(course["event_type"]), {
+            "Initial assessment", "Response check", "Complication",
+            "Final diagnosis", "Disposition and follow-up",
+        })
+        response = course[course["event_type"] == "Response check"]
+        self.assertTrue(response["response_status"].isin({
+            "Improved", "Partially improved", "Unchanged", "Worsened", "Not documented",
+        }).all())
+        self.assertTrue(response["causal_assessment"].str.contains("cannot establish", case=False).all())
+        self.assertTrue(response["response_interpretation"].str.contains("not a measured", case=False).all())
+        self.assertTrue(self.data["prescriptions"]["rationale"].str.contains("Synthetic").all())
+        self.assertTrue(self.data["procedures_icd"]["rationale"].str.contains("Synthetic").all())
+        self.assertTrue((course["synthetic_flag"] == 1).all())
+        self.assertTrue(course["summary"].str.strip().ne("").all())
+
+    def test_every_historical_patient_has_a_final_diagnosis_linked_to_diagnoses(self):
+        historical_ids = set(self.data["patients"].loc[
+            self.data["patients"]["patient_status"] == "HISTORICAL", "subject_id"
+        ].astype(str))
+        finals = self.data["hospital_course"].loc[
+            self.data["hospital_course"]["event_type"] == "Final diagnosis"
+        ]
+        historical_finals = finals[finals["subject_id"].astype(str).isin(historical_ids)]
+        final_counts = historical_finals.groupby(
+            historical_finals["subject_id"].astype(str)
+        ).size()
+        self.assertEqual(set(final_counts.index), historical_ids)
+        self.assertTrue((final_counts == 1).all())
+        diagnosis_keys = set(zip(
+            self.data["diagnoses_icd"]["subject_id"].astype(str),
+            self.data["diagnoses_icd"]["icd_code"].astype(str),
+            self.data["diagnoses_icd"]["long_title"].astype(str),
+        ))
+        self.assertTrue(all(
+            (str(row.subject_id), row.final_diagnosis_code, row.final_diagnosis) in diagnosis_keys
+            for row in finals.itertuples()
+        ))
+
     def test_profile_cohort_filter(self):
         query = RetrievalQuery(profile_group="diabetes")
         cohort = select_cohort(self.data, query)
@@ -244,6 +285,23 @@ class RetrievalTests(unittest.TestCase):
         self.assertEqual(metrics["Blood pressure"], "131/93 mmHg")
         self.assertIn("Approx. age: 80", rendered_text)
         self.assertIn("Sex field: F", rendered_text)
+        subheaders = {widget.value for widget in app.subheader}
+        self.assertIn("Compare patient records", subheaders)
+        self.assertIn("Historical hospital-course timeline", subheaders)
+        timeline_text = "\n".join(str(widget.value) for widget in app.markdown)
+        self.assertIn("FINAL DIAGNOSIS · HISTORICAL PATIENT", timeline_text)
+        timeline_widgets = (
+            list(app.caption) + list(app.info) + list(app.success)
+            + list(app.warning) + list(app.error)
+        )
+        timeline_text += "\n" + "\n".join(str(widget.value) for widget in timeline_widgets)
+        self.assertIn("Simulated response:", timeline_text)
+        self.assertIn("Causal assessment:", timeline_text)
+        self.assertIn("Rationale:", timeline_text)
+        self.assertNotIn('<div class="timeline', timeline_text)
+        self.assertNotIn("timeline-entry", timeline_text)
+        self.assertIn("Diagnosis recorded", timeline_text)
+        self.assertIn("Event colors distinguish", timeline_text)
         self.assertFalse(app.exception)
 
 if __name__ == "__main__":

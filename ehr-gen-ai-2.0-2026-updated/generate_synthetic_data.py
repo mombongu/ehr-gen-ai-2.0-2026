@@ -159,6 +159,138 @@ def write_csv(filename, rows):
         writer.writerows(rows)
 
 
+def build_hospital_course(
+    subject_id: int,
+    hadm_id: int,
+    start: str,
+    end: str,
+    outcome: str,
+    discharge_location: str,
+    profile_name: str,
+    final_diagnosis: tuple[str, str],
+) -> list[dict]:
+    rng = random.Random(SEED + subject_id)
+
+    if outcome == "DISCHARGED_ALIVE":
+        response_status = rng.choice(["Improved", "Partially improved", "Unchanged"])
+    elif outcome == "TRANSFERRED":
+        response_status = rng.choice(["Worsened", "Unchanged"])
+    else:
+        response_status = "Not documented"
+
+    response = {
+        "Improved": "Symptoms documented as improved at the fictional follow-up check.",
+        "Partially improved": "Partial symptom improvement documented at the fictional follow-up check.",
+        "Unchanged": "No meaningful change documented at the fictional follow-up check.",
+        "Worsened": "Symptoms documented as worse at the fictional follow-up check; cause not specified.",
+        "Not documented": "Treatment response not fully documented before departure.",
+    }[response_status]
+
+    complication = rng.choice([
+        "No complication documented during the fictional encounter.",
+        "Transient nausea noted; cause not specified.",
+        "Temporary peripheral IV access issue noted as resolved.",
+        "Brief dizziness noted; cause not specified.",
+    ])
+    if outcome == "TRANSFERRED":
+        disposition = (
+            f"Transferred to {discharge_location}; handoff noted in the fictional summary."
+        )
+    elif outcome == "LEFT_AGAINST_MEDICAL_ADVICE":
+        disposition = (
+            "Departure against medical advice recorded; discussion noted in the fictional summary."
+        )
+    else:
+        disposition = (
+            f"Discharged to {discharge_location}; outpatient follow-up noted in the fictional summary."
+        )
+
+    start_date = date.fromisoformat(start)
+    end_date = date.fromisoformat(end)
+    midpoint = start_date + (end_date - start_date) // 2
+    profile_presentations = {
+        "diabetes": "weakness and elevated blood glucose",
+        "cardiac": "shortness of breath and leg swelling",
+        "respiratory": "cough and difficulty breathing",
+        "infection": "fever and generalized weakness",
+        "renal": "fatigue and reduced urine output",
+    }
+    event_details = [
+        (
+            start + " 08:30:00",
+            "Initial assessment",
+            f"Fictional presentation: {profile_presentations[profile_name]}.",
+            "",
+            "",
+            "",
+        ),
+        (
+            midpoint.isoformat() + " 12:00:00",
+            "Response check",
+            response,
+            "Recorded orders and procedures earlier in this encounter",
+            "Synthetic course label only; no causal treatment effect is established.",
+            response_status,
+        ),
+        (
+            midpoint.isoformat() + " 13:00:00",
+            "Complication",
+            complication,
+            "",
+            "",
+            "",
+        ),
+        (
+            end + " 12:00:00",
+            "Final diagnosis",
+            f"Fictional final coded diagnosis: {final_diagnosis[0]} — {final_diagnosis[1]}.",
+            "",
+            "",
+            "",
+        ),
+        (
+            end + " 13:00:00",
+            "Disposition and follow-up",
+            disposition,
+            "",
+            "",
+            "",
+        ),
+    ]
+    return [
+        {
+            "event_id": f"{hadm_id}-{sequence}",
+            "subject_id": subject_id,
+            "hadm_id": hadm_id,
+            "event_time": event_time,
+            "event_type": event_type,
+            "summary": summary,
+            "associated_treatment": associated_treatment,
+            "rationale": rationale,
+            "response_status": response_status_value,
+            "response_interpretation": (
+                "Simulated status only; not a measured or attributable treatment effect."
+                if event_type == "Response check" else ""
+            ),
+            "causal_assessment": (
+                "Not assessed; synthetic records cannot establish treatment causality."
+                if event_type == "Response check" else ""
+            ),
+            "final_diagnosis_code": (
+                final_diagnosis[0] if event_type == "Final diagnosis" else ""
+            ),
+            "final_diagnosis": (
+                final_diagnosis[1] if event_type == "Final diagnosis" else ""
+            ),
+            "synthetic_flag": 1,
+        }
+        for sequence, (
+            event_time, event_type, summary, associated_treatment, rationale,
+            response_status_value,
+        ) in enumerate(event_details, start=1)
+    ]
+
+
 def dt(days_ago: int) -> str:
     return (TODAY - timedelta(days=days_ago)).isoformat()
 
@@ -168,7 +300,9 @@ def main():
     OUT.mkdir(exist_ok=True)
     patients, admissions, diagnoses, prescriptions, administrations = [], [], [], [], []
     known_pair_blueprint = {}
-    procedures, labs, charts, edstays, triage, allergies, discharges, radiology = ([] for _ in range(8))
+    procedures, labs, charts, edstays, triage, allergies, discharges, radiology, hospital_course = (
+        [] for _ in range(9)
+    )
     ids = {k: 1 for k in ["adm", "diag", "rx", "admin", "proc", "lab", "chart", "ed", "triage", "allergy", "discharge", "radiology"]}
 
     for i in range(1, N_PATIENTS + 1):
@@ -216,16 +350,21 @@ def main():
             "language": "English", "marital_status": rng.choice(["MARRIED", "SINGLE", "WIDOWED", "UNKNOWN"]),
             "race": race, "synthetic_flag": 1,
         })
-
         conditions = build_patient_conditions(profile, rng)
         if i == 11 and known_pair_blueprint:
             conditions = list(known_pair_blueprint["conditions"])
         elif i == 1:
             known_pair_blueprint["conditions"] = list(conditions)
+        final_diagnosis = conditions[0]
         for code, label in dict(conditions).items():
             diagnoses.append({"subject_id": pid, "hadm_id": prior_hadm, "seq_num": ids["diag"],
-                              "icd_code": code, "icd_version": 10, "long_title": label, "synthetic_flag": 1})
+                              "icd_code": code, "icd_version": 10, "long_title": label,
+                              "diagnosis_time": start + " 10:00:00", "synthetic_flag": 1})
             ids["diag"] += 1
+        hospital_course.extend(build_hospital_course(
+            pid, prior_hadm, start, end, outcome, discharge_location,
+            profile_name, final_diagnosis,
+        ))
 
         meds_with_freq = build_patient_meds(profile, rng)
         if i == 11 and known_pair_blueprint:
@@ -239,7 +378,9 @@ def main():
                 "prescription_id": rx_id, "subject_id": pid, "hadm_id": prior_hadm,
                 "starttime": start + " 09:00:00", "stoptime": end + " 09:00:00", "drug": med,
                 "dose_val_rx": rng.choice(["5", "10", "20", "500"]), "dose_unit_rx": "mg",
-                "route": rng.choice(["PO", "IV", "INHALATION"]), "frequency": frequency, "synthetic_flag": 1,
+                "route": rng.choice(["PO", "IV", "INHALATION"]), "frequency": frequency,
+                "rationale": f"Synthetic {profile_name} scenario; patient-specific indication not represented.",
+                "synthetic_flag": 1,
             })
             was_administered = (
                 med in known_pair_blueprint.get("administered_medications", set())
@@ -261,7 +402,9 @@ def main():
         for proc in profile["procedures"]:
             procedures.append({"subject_id": pid, "hadm_id": prior_hadm, "seq_num": ids["proc"],
                                "chartdate": start, "procedure_name": proc, "icd_code": "",
-                               "icd_version": "", "synthetic_flag": 1})
+                               "icd_version": "",
+                               "rationale": f"Synthetic {profile_name} scenario; patient-specific indication not represented.",
+                               "synthetic_flag": 1})
             ids["proc"] += 1
         for name, unit, low, high in profile["labs"]:
             labs.append({"subject_id": pid, "hadm_id": prior_hadm, "itemid": ids["lab"],
@@ -326,6 +469,7 @@ def main():
         "procedures_icd.csv": procedures, "labevents.csv": labs, "chartevents.csv": charts,
         "edstays.csv": edstays, "triage.csv": triage, "allergies.csv": allergies,
         "discharge.csv": discharges, "radiology.csv": radiology,
+        "hospital_course.csv": hospital_course,
     }
     for filename, rows in tables.items():
         write_csv(filename, rows)
@@ -338,6 +482,8 @@ def main():
         "Medication schedules vary realistically with PRN, once daily, twice daily, and once monthly patterns.\n"
         "Allergy status distinguishes KNOWN, NO_KNOWN_ALLERGIES, UNKNOWN, and NOT_DOCUMENTED.\n"
         "Historical outcome_status is explicit; PENDING means no outcome is available yet.\n"
+        "hospital_course.csv contains fictional assessments, response checks, complications, final diagnoses, and disposition notes.\n"
+        "Response events are temporal associations only and do not show treatment causality.\n"
         "Never use these data to guide real patient care.\n", encoding="utf-8")
     print(f"Generated {len(patients)} fictional patients and {len(tables)} CSV tables in {OUT}")
 

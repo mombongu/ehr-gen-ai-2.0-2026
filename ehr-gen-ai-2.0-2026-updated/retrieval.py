@@ -10,6 +10,7 @@ TABLES = [
     "patients", "admissions", "diagnoses_icd", "prescriptions",
     "medication_administrations", "procedures_icd", "labevents", "chartevents",
     "allergies", "discharge", "radiology", "edstays", "triage",
+    "hospital_course",
 ]
 
 @dataclass
