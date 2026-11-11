@@ -1,0 +1,11 @@
+subject_id,stay_id,charttime,chiefcomplaint,temperature,heartrate,resprate,o2sat,sbp,dbp,acuity,synthetic_flag
+20001,70001,2025-06-01 09:10:00,Weakness and elevated blood glucose,38.3,97,27,98,131,93,2,1
+20002,70002,2025-06-01 09:10:00,Shortness of breath and leg swelling,37.8,125,28,99,132,63,4,1
+20003,70003,2025-06-01 09:10:00,Cough and difficulty breathing,38.2,81,14,89,135,66,2,1
+20004,70004,2025-06-01 09:10:00,Fever and generalized weakness,38.7,108,23,94,152,98,3,1
+20005,70005,2025-06-01 09:10:00,Fatigue and reduced urine output,38.7,122,20,98,146,89,4,1
+20006,70006,2025-06-01 09:10:00,Weakness and elevated blood glucose,38.8,102,16,89,108,83,3,1
+20007,70007,2025-06-01 09:10:00,Shortness of breath and leg swelling,37.6,85,17,93,106,66,2,1
+20008,70008,2025-06-01 09:10:00,Cough and difficulty breathing,38.7,77,23,88,147,85,4,1
+20009,70009,2025-06-01 09:10:00,Fever and generalized weakness,37.7,124,14,99,149,74,3,1
+20010,70010,2025-06-01 09:10:00,Fatigue and reduced urine output,37.1,107,29,98,101,80,3,1

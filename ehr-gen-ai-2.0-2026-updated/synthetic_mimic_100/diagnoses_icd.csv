@@ -1,0 +1,408 @@
+subject_id,hadm_id,seq_num,icd_code,icd_version,long_title,diagnosis_time,synthetic_flag
+20001,50001,1,E11.9,10,Type 2 diabetes mellitus without complications,2024-10-12 10:00:00,1
+20001,50001,2,I10,10,Essential hypertension,2024-10-12 10:00:00,1
+20001,50001,3,E78.5,10,Hyperlipidemia,2024-10-12 10:00:00,1
+20001,50001,4,J30.9,10,Allergic rhinitis,2024-10-12 10:00:00,1
+20002,50002,5,I50.9,10,"Heart failure, unspecified",2024-06-20 10:00:00,1
+20002,50002,6,I10,10,Essential hypertension,2024-06-20 10:00:00,1
+20002,50002,7,I25.10,10,Atherosclerotic heart disease,2024-06-20 10:00:00,1
+20002,50002,8,M54.5,10,Low back pain,2024-06-20 10:00:00,1
+20002,50002,9,K52.9,10,Noninfective gastroenteritis and colitis,2024-06-20 10:00:00,1
+20003,50003,10,J18.9,10,"Pneumonia, unspecified organism",2023-09-01 10:00:00,1
+20003,50003,11,J44.1,10,COPD with acute exacerbation,2023-09-01 10:00:00,1
+20003,50003,12,J45.909,10,"Asthma, unspecified",2023-09-01 10:00:00,1
+20003,50003,13,M54.5,10,Low back pain,2023-09-01 10:00:00,1
+20003,50003,14,F41.9,10,Anxiety disorder,2023-09-01 10:00:00,1
+20004,50004,15,A41.9,10,"Sepsis, unspecified organism",2024-02-16 10:00:00,1
+20004,50004,16,N39.0,10,Urinary tract infection,2024-02-16 10:00:00,1
+20004,50004,17,J06.9,10,Acute upper respiratory infection,2024-02-16 10:00:00,1
+20004,50004,18,I10,10,Essential hypertension,2024-02-16 10:00:00,1
+20005,50005,19,N18.3,10,"Chronic kidney disease, stage 3",2023-12-04 10:00:00,1
+20005,50005,20,I10,10,Essential hypertension,2023-12-04 10:00:00,1
+20005,50005,21,E87.1,10,Hyponatremia,2023-12-04 10:00:00,1
+20006,50006,22,E11.9,10,Type 2 diabetes mellitus without complications,2023-09-09 10:00:00,1
+20006,50006,23,I10,10,Essential hypertension,2023-09-09 10:00:00,1
+20006,50006,24,E78.5,10,Hyperlipidemia,2023-09-09 10:00:00,1
+20007,50007,25,I50.9,10,"Heart failure, unspecified",2024-10-11 10:00:00,1
+20007,50007,26,I10,10,Essential hypertension,2024-10-11 10:00:00,1
+20007,50007,27,I25.10,10,Atherosclerotic heart disease,2024-10-11 10:00:00,1
+20007,50007,28,K21.9,10,Gastroesophageal reflux disease,2024-10-11 10:00:00,1
+20007,50007,29,E78.5,10,Hyperlipidemia,2024-10-11 10:00:00,1
+20008,50008,30,J18.9,10,"Pneumonia, unspecified organism",2023-11-22 10:00:00,1
+20008,50008,31,J44.1,10,COPD with acute exacerbation,2023-11-22 10:00:00,1
+20008,50008,32,J45.909,10,"Asthma, unspecified",2023-11-22 10:00:00,1
+20008,50008,33,J02.9,10,Acute pharyngitis,2023-11-22 10:00:00,1
+20009,50009,34,A41.9,10,"Sepsis, unspecified organism",2024-10-06 10:00:00,1
+20009,50009,35,N39.0,10,Urinary tract infection,2024-10-06 10:00:00,1
+20009,50009,36,J06.9,10,Acute upper respiratory infection,2024-10-06 10:00:00,1
+20009,50009,37,L50.9,10,Urticaria,2024-10-06 10:00:00,1
+20010,50010,38,N18.3,10,"Chronic kidney disease, stage 3",2024-06-18 10:00:00,1
+20010,50010,39,I10,10,Essential hypertension,2024-06-18 10:00:00,1
+20010,50010,40,E87.1,10,Hyponatremia,2024-06-18 10:00:00,1
+20010,50010,41,F41.9,10,Anxiety disorder,2024-06-18 10:00:00,1
+20011,50011,42,E11.9,10,Type 2 diabetes mellitus without complications,2024-10-29 10:00:00,1
+20011,50011,43,I10,10,Essential hypertension,2024-10-29 10:00:00,1
+20011,50011,44,E78.5,10,Hyperlipidemia,2024-10-29 10:00:00,1
+20011,50011,45,J30.9,10,Allergic rhinitis,2024-10-29 10:00:00,1
+20012,50012,46,I50.9,10,"Heart failure, unspecified",2023-07-07 10:00:00,1
+20012,50012,47,I10,10,Essential hypertension,2023-07-07 10:00:00,1
+20012,50012,48,I25.10,10,Atherosclerotic heart disease,2023-07-07 10:00:00,1
+20012,50012,49,J02.9,10,Acute pharyngitis,2023-07-07 10:00:00,1
+20012,50012,50,E78.5,10,Hyperlipidemia,2023-07-07 10:00:00,1
+20013,50013,51,J18.9,10,"Pneumonia, unspecified organism",2024-09-04 10:00:00,1
+20013,50013,52,J44.1,10,COPD with acute exacerbation,2024-09-04 10:00:00,1
+20013,50013,53,J45.909,10,"Asthma, unspecified",2024-09-04 10:00:00,1
+20014,50014,54,A41.9,10,"Sepsis, unspecified organism",2024-01-24 10:00:00,1
+20014,50014,55,N39.0,10,Urinary tract infection,2024-01-24 10:00:00,1
+20014,50014,56,J06.9,10,Acute upper respiratory infection,2024-01-24 10:00:00,1
+20015,50015,57,N18.3,10,"Chronic kidney disease, stage 3",2024-05-21 10:00:00,1
+20015,50015,58,I10,10,Essential hypertension,2024-05-21 10:00:00,1
+20015,50015,59,E87.1,10,Hyponatremia,2024-05-21 10:00:00,1
+20016,50016,60,E11.9,10,Type 2 diabetes mellitus without complications,2024-02-03 10:00:00,1
+20016,50016,61,I10,10,Essential hypertension,2024-02-03 10:00:00,1
+20016,50016,62,E78.5,10,Hyperlipidemia,2024-02-03 10:00:00,1
+20016,50016,63,K21.9,10,Gastroesophageal reflux disease,2024-02-03 10:00:00,1
+20016,50016,64,M54.5,10,Low back pain,2024-02-03 10:00:00,1
+20017,50017,65,I50.9,10,"Heart failure, unspecified",2023-11-08 10:00:00,1
+20017,50017,66,I10,10,Essential hypertension,2023-11-08 10:00:00,1
+20017,50017,67,I25.10,10,Atherosclerotic heart disease,2023-11-08 10:00:00,1
+20017,50017,68,F41.9,10,Anxiety disorder,2023-11-08 10:00:00,1
+20018,50018,69,J18.9,10,"Pneumonia, unspecified organism",2024-05-23 10:00:00,1
+20018,50018,70,J44.1,10,COPD with acute exacerbation,2024-05-23 10:00:00,1
+20018,50018,71,J45.909,10,"Asthma, unspecified",2024-05-23 10:00:00,1
+20018,50018,72,I10,10,Essential hypertension,2024-05-23 10:00:00,1
+20019,50019,73,A41.9,10,"Sepsis, unspecified organism",2023-08-31 10:00:00,1
+20019,50019,74,N39.0,10,Urinary tract infection,2023-08-31 10:00:00,1
+20019,50019,75,J06.9,10,Acute upper respiratory infection,2023-08-31 10:00:00,1
+20019,50019,76,M06.9,10,Rheumatoid arthritis,2023-08-31 10:00:00,1
+20019,50019,77,J30.9,10,Allergic rhinitis,2023-08-31 10:00:00,1
+20020,50020,78,N18.3,10,"Chronic kidney disease, stage 3",2024-09-19 10:00:00,1
+20020,50020,79,I10,10,Essential hypertension,2024-09-19 10:00:00,1
+20020,50020,80,E87.1,10,Hyponatremia,2024-09-19 10:00:00,1
+20020,50020,81,M06.9,10,Rheumatoid arthritis,2024-09-19 10:00:00,1
+20021,50021,82,E11.9,10,Type 2 diabetes mellitus without complications,2024-04-14 10:00:00,1
+20021,50021,83,I10,10,Essential hypertension,2024-04-14 10:00:00,1
+20021,50021,84,E78.5,10,Hyperlipidemia,2024-04-14 10:00:00,1
+20021,50021,85,F41.9,10,Anxiety disorder,2024-04-14 10:00:00,1
+20021,50021,86,J30.9,10,Allergic rhinitis,2024-04-14 10:00:00,1
+20022,50022,87,I50.9,10,"Heart failure, unspecified",2024-02-04 10:00:00,1
+20022,50022,88,I10,10,Essential hypertension,2024-02-04 10:00:00,1
+20022,50022,89,I25.10,10,Atherosclerotic heart disease,2024-02-04 10:00:00,1
+20022,50022,90,K21.9,10,Gastroesophageal reflux disease,2024-02-04 10:00:00,1
+20023,50023,91,J18.9,10,"Pneumonia, unspecified organism",2025-04-07 10:00:00,1
+20023,50023,92,J44.1,10,COPD with acute exacerbation,2025-04-07 10:00:00,1
+20023,50023,93,J45.909,10,"Asthma, unspecified",2025-04-07 10:00:00,1
+20023,50023,94,E78.5,10,Hyperlipidemia,2025-04-07 10:00:00,1
+20023,50023,95,J30.9,10,Allergic rhinitis,2025-04-07 10:00:00,1
+20024,50024,96,A41.9,10,"Sepsis, unspecified organism",2024-07-07 10:00:00,1
+20024,50024,97,N39.0,10,Urinary tract infection,2024-07-07 10:00:00,1
+20024,50024,98,J06.9,10,Acute upper respiratory infection,2024-07-07 10:00:00,1
+20024,50024,99,I10,10,Essential hypertension,2024-07-07 10:00:00,1
+20025,50025,100,N18.3,10,"Chronic kidney disease, stage 3",2024-08-01 10:00:00,1
+20025,50025,101,I10,10,Essential hypertension,2024-08-01 10:00:00,1
+20025,50025,102,E87.1,10,Hyponatremia,2024-08-01 10:00:00,1
+20025,50025,103,J30.9,10,Allergic rhinitis,2024-08-01 10:00:00,1
+20026,50026,104,E11.9,10,Type 2 diabetes mellitus without complications,2024-05-28 10:00:00,1
+20026,50026,105,I10,10,Essential hypertension,2024-05-28 10:00:00,1
+20026,50026,106,E78.5,10,Hyperlipidemia,2024-05-28 10:00:00,1
+20026,50026,107,K52.9,10,Noninfective gastroenteritis and colitis,2024-05-28 10:00:00,1
+20026,50026,108,F41.9,10,Anxiety disorder,2024-05-28 10:00:00,1
+20027,50027,109,I50.9,10,"Heart failure, unspecified",2025-02-01 10:00:00,1
+20027,50027,110,I10,10,Essential hypertension,2025-02-01 10:00:00,1
+20027,50027,111,I25.10,10,Atherosclerotic heart disease,2025-02-01 10:00:00,1
+20027,50027,112,F32.9,10,Major depressive disorder,2025-02-01 10:00:00,1
+20028,50028,113,J18.9,10,"Pneumonia, unspecified organism",2024-11-26 10:00:00,1
+20028,50028,114,J44.1,10,COPD with acute exacerbation,2024-11-26 10:00:00,1
+20028,50028,115,J45.909,10,"Asthma, unspecified",2024-11-26 10:00:00,1
+20028,50028,116,M06.9,10,Rheumatoid arthritis,2024-11-26 10:00:00,1
+20029,50029,117,A41.9,10,"Sepsis, unspecified organism",2024-01-06 10:00:00,1
+20029,50029,118,N39.0,10,Urinary tract infection,2024-01-06 10:00:00,1
+20029,50029,119,J06.9,10,Acute upper respiratory infection,2024-01-06 10:00:00,1
+20029,50029,120,K21.9,10,Gastroesophageal reflux disease,2024-01-06 10:00:00,1
+20029,50029,121,M54.5,10,Low back pain,2024-01-06 10:00:00,1
+20030,50030,122,N18.3,10,"Chronic kidney disease, stage 3",2023-12-08 10:00:00,1
+20030,50030,123,I10,10,Essential hypertension,2023-12-08 10:00:00,1
+20030,50030,124,E87.1,10,Hyponatremia,2023-12-08 10:00:00,1
+20031,50031,125,E11.9,10,Type 2 diabetes mellitus without complications,2025-04-14 10:00:00,1
+20031,50031,126,I10,10,Essential hypertension,2025-04-14 10:00:00,1
+20031,50031,127,E78.5,10,Hyperlipidemia,2025-04-14 10:00:00,1
+20031,50031,128,J30.9,10,Allergic rhinitis,2025-04-14 10:00:00,1
+20031,50031,129,J02.9,10,Acute pharyngitis,2025-04-14 10:00:00,1
+20032,50032,130,I50.9,10,"Heart failure, unspecified",2023-07-09 10:00:00,1
+20032,50032,131,I10,10,Essential hypertension,2023-07-09 10:00:00,1
+20032,50032,132,I25.10,10,Atherosclerotic heart disease,2023-07-09 10:00:00,1
+20032,50032,133,M06.9,10,Rheumatoid arthritis,2023-07-09 10:00:00,1
+20033,50033,134,J18.9,10,"Pneumonia, unspecified organism",2024-05-13 10:00:00,1
+20033,50033,135,J44.1,10,COPD with acute exacerbation,2024-05-13 10:00:00,1
+20033,50033,136,J45.909,10,"Asthma, unspecified",2024-05-13 10:00:00,1
+20033,50033,137,F32.9,10,Major depressive disorder,2024-05-13 10:00:00,1
+20033,50033,138,M06.9,10,Rheumatoid arthritis,2024-05-13 10:00:00,1
+20033,50033,139,I10,10,Essential hypertension,2024-05-13 10:00:00,1
+20034,50034,140,A41.9,10,"Sepsis, unspecified organism",2024-03-26 10:00:00,1
+20034,50034,141,N39.0,10,Urinary tract infection,2024-03-26 10:00:00,1
+20034,50034,142,J06.9,10,Acute upper respiratory infection,2024-03-26 10:00:00,1
+20035,50035,143,N18.3,10,"Chronic kidney disease, stage 3",2024-10-19 10:00:00,1
+20035,50035,144,I10,10,Essential hypertension,2024-10-19 10:00:00,1
+20035,50035,145,E87.1,10,Hyponatremia,2024-10-19 10:00:00,1
+20036,50036,146,E11.9,10,Type 2 diabetes mellitus without complications,2024-10-28 10:00:00,1
+20036,50036,147,I10,10,Essential hypertension,2024-10-28 10:00:00,1
+20036,50036,148,E78.5,10,Hyperlipidemia,2024-10-28 10:00:00,1
+20036,50036,149,F41.9,10,Anxiety disorder,2024-10-28 10:00:00,1
+20036,50036,150,K52.9,10,Noninfective gastroenteritis and colitis,2024-10-28 10:00:00,1
+20037,50037,151,I50.9,10,"Heart failure, unspecified",2024-06-01 10:00:00,1
+20037,50037,152,I10,10,Essential hypertension,2024-06-01 10:00:00,1
+20037,50037,153,I25.10,10,Atherosclerotic heart disease,2024-06-01 10:00:00,1
+20037,50037,154,M54.5,10,Low back pain,2024-06-01 10:00:00,1
+20037,50037,155,K52.9,10,Noninfective gastroenteritis and colitis,2024-06-01 10:00:00,1
+20038,50038,156,J18.9,10,"Pneumonia, unspecified organism",2025-04-03 10:00:00,1
+20038,50038,157,J44.1,10,COPD with acute exacerbation,2025-04-03 10:00:00,1
+20038,50038,158,J45.909,10,"Asthma, unspecified",2025-04-03 10:00:00,1
+20038,50038,159,K21.9,10,Gastroesophageal reflux disease,2025-04-03 10:00:00,1
+20039,50039,160,A41.9,10,"Sepsis, unspecified organism",2025-03-31 10:00:00,1
+20039,50039,161,N39.0,10,Urinary tract infection,2025-03-31 10:00:00,1
+20039,50039,162,J06.9,10,Acute upper respiratory infection,2025-03-31 10:00:00,1
+20039,50039,163,J30.9,10,Allergic rhinitis,2025-03-31 10:00:00,1
+20040,50040,164,N18.3,10,"Chronic kidney disease, stage 3",2023-10-01 10:00:00,1
+20040,50040,165,I10,10,Essential hypertension,2023-10-01 10:00:00,1
+20040,50040,166,E87.1,10,Hyponatremia,2023-10-01 10:00:00,1
+20040,50040,167,J30.9,10,Allergic rhinitis,2023-10-01 10:00:00,1
+20041,50041,168,E11.9,10,Type 2 diabetes mellitus without complications,2023-07-31 10:00:00,1
+20041,50041,169,I10,10,Essential hypertension,2023-07-31 10:00:00,1
+20041,50041,170,E78.5,10,Hyperlipidemia,2023-07-31 10:00:00,1
+20041,50041,171,M54.5,10,Low back pain,2023-07-31 10:00:00,1
+20042,50042,172,I50.9,10,"Heart failure, unspecified",2024-06-17 10:00:00,1
+20042,50042,173,I10,10,Essential hypertension,2024-06-17 10:00:00,1
+20042,50042,174,I25.10,10,Atherosclerotic heart disease,2024-06-17 10:00:00,1
+20043,50043,175,J18.9,10,"Pneumonia, unspecified organism",2025-01-05 10:00:00,1
+20043,50043,176,J44.1,10,COPD with acute exacerbation,2025-01-05 10:00:00,1
+20043,50043,177,J45.909,10,"Asthma, unspecified",2025-01-05 10:00:00,1
+20044,50044,178,A41.9,10,"Sepsis, unspecified organism",2023-11-12 10:00:00,1
+20044,50044,179,N39.0,10,Urinary tract infection,2023-11-12 10:00:00,1
+20044,50044,180,J06.9,10,Acute upper respiratory infection,2023-11-12 10:00:00,1
+20044,50044,181,K21.9,10,Gastroesophageal reflux disease,2023-11-12 10:00:00,1
+20045,50045,182,N18.3,10,"Chronic kidney disease, stage 3",2023-08-26 10:00:00,1
+20045,50045,183,I10,10,Essential hypertension,2023-08-26 10:00:00,1
+20045,50045,184,E87.1,10,Hyponatremia,2023-08-26 10:00:00,1
+20046,50046,185,E11.9,10,Type 2 diabetes mellitus without complications,2025-04-05 10:00:00,1
+20046,50046,186,I10,10,Essential hypertension,2025-04-05 10:00:00,1
+20046,50046,187,E78.5,10,Hyperlipidemia,2025-04-05 10:00:00,1
+20046,50046,188,M54.5,10,Low back pain,2025-04-05 10:00:00,1
+20047,50047,189,I50.9,10,"Heart failure, unspecified",2024-03-26 10:00:00,1
+20047,50047,190,I10,10,Essential hypertension,2024-03-26 10:00:00,1
+20047,50047,191,I25.10,10,Atherosclerotic heart disease,2024-03-26 10:00:00,1
+20047,50047,192,M06.9,10,Rheumatoid arthritis,2024-03-26 10:00:00,1
+20047,50047,193,L50.9,10,Urticaria,2024-03-26 10:00:00,1
+20048,50048,194,J18.9,10,"Pneumonia, unspecified organism",2023-11-05 10:00:00,1
+20048,50048,195,J44.1,10,COPD with acute exacerbation,2023-11-05 10:00:00,1
+20048,50048,196,J45.909,10,"Asthma, unspecified",2023-11-05 10:00:00,1
+20048,50048,197,J02.9,10,Acute pharyngitis,2023-11-05 10:00:00,1
+20049,50049,198,A41.9,10,"Sepsis, unspecified organism",2023-11-06 10:00:00,1
+20049,50049,199,N39.0,10,Urinary tract infection,2023-11-06 10:00:00,1
+20049,50049,200,J06.9,10,Acute upper respiratory infection,2023-11-06 10:00:00,1
+20049,50049,201,J02.9,10,Acute pharyngitis,2023-11-06 10:00:00,1
+20049,50049,202,K52.9,10,Noninfective gastroenteritis and colitis,2023-11-06 10:00:00,1
+20049,50049,203,I10,10,Essential hypertension,2023-11-06 10:00:00,1
+20050,50050,204,N18.3,10,"Chronic kidney disease, stage 3",2024-08-21 10:00:00,1
+20050,50050,205,I10,10,Essential hypertension,2024-08-21 10:00:00,1
+20050,50050,206,E87.1,10,Hyponatremia,2024-08-21 10:00:00,1
+20051,50051,207,E11.9,10,Type 2 diabetes mellitus without complications,2024-02-13 10:00:00,1
+20051,50051,208,I10,10,Essential hypertension,2024-02-13 10:00:00,1
+20051,50051,209,E78.5,10,Hyperlipidemia,2024-02-13 10:00:00,1
+20051,50051,210,M54.5,10,Low back pain,2024-02-13 10:00:00,1
+20052,50052,211,I50.9,10,"Heart failure, unspecified",2024-01-16 10:00:00,1
+20052,50052,212,I10,10,Essential hypertension,2024-01-16 10:00:00,1
+20052,50052,213,I25.10,10,Atherosclerotic heart disease,2024-01-16 10:00:00,1
+20053,50053,214,J18.9,10,"Pneumonia, unspecified organism",2025-03-08 10:00:00,1
+20053,50053,215,J44.1,10,COPD with acute exacerbation,2025-03-08 10:00:00,1
+20053,50053,216,J45.909,10,"Asthma, unspecified",2025-03-08 10:00:00,1
+20053,50053,217,F41.9,10,Anxiety disorder,2025-03-08 10:00:00,1
+20053,50053,218,M54.5,10,Low back pain,2025-03-08 10:00:00,1
+20054,50054,219,A41.9,10,"Sepsis, unspecified organism",2024-01-23 10:00:00,1
+20054,50054,220,N39.0,10,Urinary tract infection,2024-01-23 10:00:00,1
+20054,50054,221,J06.9,10,Acute upper respiratory infection,2024-01-23 10:00:00,1
+20055,50055,222,N18.3,10,"Chronic kidney disease, stage 3",2024-07-04 10:00:00,1
+20055,50055,223,I10,10,Essential hypertension,2024-07-04 10:00:00,1
+20055,50055,224,E87.1,10,Hyponatremia,2024-07-04 10:00:00,1
+20056,50056,225,E11.9,10,Type 2 diabetes mellitus without complications,2023-07-25 10:00:00,1
+20056,50056,226,I10,10,Essential hypertension,2023-07-25 10:00:00,1
+20056,50056,227,E78.5,10,Hyperlipidemia,2023-07-25 10:00:00,1
+20056,50056,228,J30.9,10,Allergic rhinitis,2023-07-25 10:00:00,1
+20056,50056,229,K52.9,10,Noninfective gastroenteritis and colitis,2023-07-25 10:00:00,1
+20057,50057,230,I50.9,10,"Heart failure, unspecified",2024-06-24 10:00:00,1
+20057,50057,231,I10,10,Essential hypertension,2024-06-24 10:00:00,1
+20057,50057,232,I25.10,10,Atherosclerotic heart disease,2024-06-24 10:00:00,1
+20057,50057,233,E78.5,10,Hyperlipidemia,2024-06-24 10:00:00,1
+20058,50058,234,J18.9,10,"Pneumonia, unspecified organism",2023-07-24 10:00:00,1
+20058,50058,235,J44.1,10,COPD with acute exacerbation,2023-07-24 10:00:00,1
+20058,50058,236,J45.909,10,"Asthma, unspecified",2023-07-24 10:00:00,1
+20058,50058,237,J30.9,10,Allergic rhinitis,2023-07-24 10:00:00,1
+20058,50058,238,K52.9,10,Noninfective gastroenteritis and colitis,2023-07-24 10:00:00,1
+20059,50059,239,A41.9,10,"Sepsis, unspecified organism",2024-10-13 10:00:00,1
+20059,50059,240,N39.0,10,Urinary tract infection,2024-10-13 10:00:00,1
+20059,50059,241,J06.9,10,Acute upper respiratory infection,2024-10-13 10:00:00,1
+20060,50060,242,N18.3,10,"Chronic kidney disease, stage 3",2025-01-08 10:00:00,1
+20060,50060,243,I10,10,Essential hypertension,2025-01-08 10:00:00,1
+20060,50060,244,E87.1,10,Hyponatremia,2025-01-08 10:00:00,1
+20060,50060,245,J30.9,10,Allergic rhinitis,2025-01-08 10:00:00,1
+20061,50061,246,E11.9,10,Type 2 diabetes mellitus without complications,2023-07-22 10:00:00,1
+20061,50061,247,I10,10,Essential hypertension,2023-07-22 10:00:00,1
+20061,50061,248,E78.5,10,Hyperlipidemia,2023-07-22 10:00:00,1
+20062,50062,249,I50.9,10,"Heart failure, unspecified",2024-03-05 10:00:00,1
+20062,50062,250,I10,10,Essential hypertension,2024-03-05 10:00:00,1
+20062,50062,251,I25.10,10,Atherosclerotic heart disease,2024-03-05 10:00:00,1
+20062,50062,252,M54.5,10,Low back pain,2024-03-05 10:00:00,1
+20063,50063,253,J18.9,10,"Pneumonia, unspecified organism",2024-12-18 10:00:00,1
+20063,50063,254,J44.1,10,COPD with acute exacerbation,2024-12-18 10:00:00,1
+20063,50063,255,J45.909,10,"Asthma, unspecified",2024-12-18 10:00:00,1
+20064,50064,256,A41.9,10,"Sepsis, unspecified organism",2024-02-27 10:00:00,1
+20064,50064,257,N39.0,10,Urinary tract infection,2024-02-27 10:00:00,1
+20064,50064,258,J06.9,10,Acute upper respiratory infection,2024-02-27 10:00:00,1
+20064,50064,259,M54.5,10,Low back pain,2024-02-27 10:00:00,1
+20065,50065,260,N18.3,10,"Chronic kidney disease, stage 3",2025-03-09 10:00:00,1
+20065,50065,261,I10,10,Essential hypertension,2025-03-09 10:00:00,1
+20065,50065,262,E87.1,10,Hyponatremia,2025-03-09 10:00:00,1
+20066,50066,263,E11.9,10,Type 2 diabetes mellitus without complications,2024-03-08 10:00:00,1
+20066,50066,264,I10,10,Essential hypertension,2024-03-08 10:00:00,1
+20066,50066,265,E78.5,10,Hyperlipidemia,2024-03-08 10:00:00,1
+20066,50066,266,J02.9,10,Acute pharyngitis,2024-03-08 10:00:00,1
+20066,50066,267,K52.9,10,Noninfective gastroenteritis and colitis,2024-03-08 10:00:00,1
+20067,50067,268,I50.9,10,"Heart failure, unspecified",2024-03-26 10:00:00,1
+20067,50067,269,I10,10,Essential hypertension,2024-03-26 10:00:00,1
+20067,50067,270,I25.10,10,Atherosclerotic heart disease,2024-03-26 10:00:00,1
+20068,50068,271,J18.9,10,"Pneumonia, unspecified organism",2024-10-01 10:00:00,1
+20068,50068,272,J44.1,10,COPD with acute exacerbation,2024-10-01 10:00:00,1
+20068,50068,273,J45.909,10,"Asthma, unspecified",2024-10-01 10:00:00,1
+20068,50068,274,K52.9,10,Noninfective gastroenteritis and colitis,2024-10-01 10:00:00,1
+20068,50068,275,I10,10,Essential hypertension,2024-10-01 10:00:00,1
+20069,50069,276,A41.9,10,"Sepsis, unspecified organism",2024-02-09 10:00:00,1
+20069,50069,277,N39.0,10,Urinary tract infection,2024-02-09 10:00:00,1
+20069,50069,278,J06.9,10,Acute upper respiratory infection,2024-02-09 10:00:00,1
+20070,50070,279,N18.3,10,"Chronic kidney disease, stage 3",2024-12-09 10:00:00,1
+20070,50070,280,I10,10,Essential hypertension,2024-12-09 10:00:00,1
+20070,50070,281,E87.1,10,Hyponatremia,2024-12-09 10:00:00,1
+20070,50070,282,K52.9,10,Noninfective gastroenteritis and colitis,2024-12-09 10:00:00,1
+20070,50070,283,J02.9,10,Acute pharyngitis,2024-12-09 10:00:00,1
+20071,50071,284,E11.9,10,Type 2 diabetes mellitus without complications,2024-06-06 10:00:00,1
+20071,50071,285,I10,10,Essential hypertension,2024-06-06 10:00:00,1
+20071,50071,286,E78.5,10,Hyperlipidemia,2024-06-06 10:00:00,1
+20071,50071,287,J30.9,10,Allergic rhinitis,2024-06-06 10:00:00,1
+20071,50071,288,F41.9,10,Anxiety disorder,2024-06-06 10:00:00,1
+20072,50072,289,I50.9,10,"Heart failure, unspecified",2025-04-12 10:00:00,1
+20072,50072,290,I10,10,Essential hypertension,2025-04-12 10:00:00,1
+20072,50072,291,I25.10,10,Atherosclerotic heart disease,2025-04-12 10:00:00,1
+20072,50072,292,L50.9,10,Urticaria,2025-04-12 10:00:00,1
+20073,50073,293,J18.9,10,"Pneumonia, unspecified organism",2024-04-14 10:00:00,1
+20073,50073,294,J44.1,10,COPD with acute exacerbation,2024-04-14 10:00:00,1
+20073,50073,295,J45.909,10,"Asthma, unspecified",2024-04-14 10:00:00,1
+20073,50073,296,I10,10,Essential hypertension,2024-04-14 10:00:00,1
+20074,50074,297,A41.9,10,"Sepsis, unspecified organism",2024-02-10 10:00:00,1
+20074,50074,298,N39.0,10,Urinary tract infection,2024-02-10 10:00:00,1
+20074,50074,299,J06.9,10,Acute upper respiratory infection,2024-02-10 10:00:00,1
+20074,50074,300,L50.9,10,Urticaria,2024-02-10 10:00:00,1
+20074,50074,301,I10,10,Essential hypertension,2024-02-10 10:00:00,1
+20075,50075,302,N18.3,10,"Chronic kidney disease, stage 3",2025-02-01 10:00:00,1
+20075,50075,303,I10,10,Essential hypertension,2025-02-01 10:00:00,1
+20075,50075,304,E87.1,10,Hyponatremia,2025-02-01 10:00:00,1
+20076,50076,305,E11.9,10,Type 2 diabetes mellitus without complications,2024-09-29 10:00:00,1
+20076,50076,306,I10,10,Essential hypertension,2024-09-29 10:00:00,1
+20076,50076,307,E78.5,10,Hyperlipidemia,2024-09-29 10:00:00,1
+20077,50077,308,I50.9,10,"Heart failure, unspecified",2025-02-22 10:00:00,1
+20077,50077,309,I10,10,Essential hypertension,2025-02-22 10:00:00,1
+20077,50077,310,I25.10,10,Atherosclerotic heart disease,2025-02-22 10:00:00,1
+20077,50077,311,J02.9,10,Acute pharyngitis,2025-02-22 10:00:00,1
+20078,50078,312,J18.9,10,"Pneumonia, unspecified organism",2024-10-16 10:00:00,1
+20078,50078,313,J44.1,10,COPD with acute exacerbation,2024-10-16 10:00:00,1
+20078,50078,314,J45.909,10,"Asthma, unspecified",2024-10-16 10:00:00,1
+20078,50078,315,M06.9,10,Rheumatoid arthritis,2024-10-16 10:00:00,1
+20079,50079,316,A41.9,10,"Sepsis, unspecified organism",2024-01-13 10:00:00,1
+20079,50079,317,N39.0,10,Urinary tract infection,2024-01-13 10:00:00,1
+20079,50079,318,J06.9,10,Acute upper respiratory infection,2024-01-13 10:00:00,1
+20079,50079,319,J30.9,10,Allergic rhinitis,2024-01-13 10:00:00,1
+20080,50080,320,N18.3,10,"Chronic kidney disease, stage 3",2024-05-18 10:00:00,1
+20080,50080,321,I10,10,Essential hypertension,2024-05-18 10:00:00,1
+20080,50080,322,E87.1,10,Hyponatremia,2024-05-18 10:00:00,1
+20080,50080,323,F41.9,10,Anxiety disorder,2024-05-18 10:00:00,1
+20080,50080,324,K52.9,10,Noninfective gastroenteritis and colitis,2024-05-18 10:00:00,1
+20081,50081,325,E11.9,10,Type 2 diabetes mellitus without complications,2024-03-26 10:00:00,1
+20081,50081,326,I10,10,Essential hypertension,2024-03-26 10:00:00,1
+20081,50081,327,E78.5,10,Hyperlipidemia,2024-03-26 10:00:00,1
+20082,50082,328,I50.9,10,"Heart failure, unspecified",2025-03-21 10:00:00,1
+20082,50082,329,I10,10,Essential hypertension,2025-03-21 10:00:00,1
+20082,50082,330,I25.10,10,Atherosclerotic heart disease,2025-03-21 10:00:00,1
+20082,50082,331,K52.9,10,Noninfective gastroenteritis and colitis,2025-03-21 10:00:00,1
+20083,50083,332,J18.9,10,"Pneumonia, unspecified organism",2024-09-10 10:00:00,1
+20083,50083,333,J44.1,10,COPD with acute exacerbation,2024-09-10 10:00:00,1
+20083,50083,334,J45.909,10,"Asthma, unspecified",2024-09-10 10:00:00,1
+20083,50083,335,K52.9,10,Noninfective gastroenteritis and colitis,2024-09-10 10:00:00,1
+20083,50083,336,L50.9,10,Urticaria,2024-09-10 10:00:00,1
+20084,50084,337,A41.9,10,"Sepsis, unspecified organism",2024-04-28 10:00:00,1
+20084,50084,338,N39.0,10,Urinary tract infection,2024-04-28 10:00:00,1
+20084,50084,339,J06.9,10,Acute upper respiratory infection,2024-04-28 10:00:00,1
+20084,50084,340,L50.9,10,Urticaria,2024-04-28 10:00:00,1
+20085,50085,341,N18.3,10,"Chronic kidney disease, stage 3",2025-04-20 10:00:00,1
+20085,50085,342,I10,10,Essential hypertension,2025-04-20 10:00:00,1
+20085,50085,343,E87.1,10,Hyponatremia,2025-04-20 10:00:00,1
+20085,50085,344,M54.5,10,Low back pain,2025-04-20 10:00:00,1
+20085,50085,345,M06.9,10,Rheumatoid arthritis,2025-04-20 10:00:00,1
+20086,50086,346,E11.9,10,Type 2 diabetes mellitus without complications,2024-02-05 10:00:00,1
+20086,50086,347,I10,10,Essential hypertension,2024-02-05 10:00:00,1
+20086,50086,348,E78.5,10,Hyperlipidemia,2024-02-05 10:00:00,1
+20086,50086,349,K52.9,10,Noninfective gastroenteritis and colitis,2024-02-05 10:00:00,1
+20086,50086,350,K21.9,10,Gastroesophageal reflux disease,2024-02-05 10:00:00,1
+20087,50087,351,I50.9,10,"Heart failure, unspecified",2025-04-20 10:00:00,1
+20087,50087,352,I10,10,Essential hypertension,2025-04-20 10:00:00,1
+20087,50087,353,I25.10,10,Atherosclerotic heart disease,2025-04-20 10:00:00,1
+20088,50088,354,J18.9,10,"Pneumonia, unspecified organism",2023-07-15 10:00:00,1
+20088,50088,355,J44.1,10,COPD with acute exacerbation,2023-07-15 10:00:00,1
+20088,50088,356,J45.909,10,"Asthma, unspecified",2023-07-15 10:00:00,1
+20089,50089,357,A41.9,10,"Sepsis, unspecified organism",2024-01-10 10:00:00,1
+20089,50089,358,N39.0,10,Urinary tract infection,2024-01-10 10:00:00,1
+20089,50089,359,J06.9,10,Acute upper respiratory infection,2024-01-10 10:00:00,1
+20089,50089,360,F41.9,10,Anxiety disorder,2024-01-10 10:00:00,1
+20090,50090,361,N18.3,10,"Chronic kidney disease, stage 3",2023-09-22 10:00:00,1
+20090,50090,362,I10,10,Essential hypertension,2023-09-22 10:00:00,1
+20090,50090,363,E87.1,10,Hyponatremia,2023-09-22 10:00:00,1
+20090,50090,364,K21.9,10,Gastroesophageal reflux disease,2023-09-22 10:00:00,1
+20091,50091,365,E11.9,10,Type 2 diabetes mellitus without complications,2024-01-31 10:00:00,1
+20091,50091,366,I10,10,Essential hypertension,2024-01-31 10:00:00,1
+20091,50091,367,E78.5,10,Hyperlipidemia,2024-01-31 10:00:00,1
+20091,50091,368,M06.9,10,Rheumatoid arthritis,2024-01-31 10:00:00,1
+20091,50091,369,F41.9,10,Anxiety disorder,2024-01-31 10:00:00,1
+20092,50092,370,I50.9,10,"Heart failure, unspecified",2025-01-17 10:00:00,1
+20092,50092,371,I10,10,Essential hypertension,2025-01-17 10:00:00,1
+20092,50092,372,I25.10,10,Atherosclerotic heart disease,2025-01-17 10:00:00,1
+20092,50092,373,F41.9,10,Anxiety disorder,2025-01-17 10:00:00,1
+20092,50092,374,K21.9,10,Gastroesophageal reflux disease,2025-01-17 10:00:00,1
+20093,50093,375,J18.9,10,"Pneumonia, unspecified organism",2025-04-18 10:00:00,1
+20093,50093,376,J44.1,10,COPD with acute exacerbation,2025-04-18 10:00:00,1
+20093,50093,377,J45.909,10,"Asthma, unspecified",2025-04-18 10:00:00,1
+20093,50093,378,K52.9,10,Noninfective gastroenteritis and colitis,2025-04-18 10:00:00,1
+20093,50093,379,F32.9,10,Major depressive disorder,2025-04-18 10:00:00,1
+20094,50094,380,A41.9,10,"Sepsis, unspecified organism",2023-11-03 10:00:00,1
+20094,50094,381,N39.0,10,Urinary tract infection,2023-11-03 10:00:00,1
+20094,50094,382,J06.9,10,Acute upper respiratory infection,2023-11-03 10:00:00,1
+20094,50094,383,F41.9,10,Anxiety disorder,2023-11-03 10:00:00,1
+20094,50094,384,I10,10,Essential hypertension,2023-11-03 10:00:00,1
+20095,50095,385,N18.3,10,"Chronic kidney disease, stage 3",2024-05-06 10:00:00,1
+20095,50095,386,I10,10,Essential hypertension,2024-05-06 10:00:00,1
+20095,50095,387,E87.1,10,Hyponatremia,2024-05-06 10:00:00,1
+20095,50095,388,L50.9,10,Urticaria,2024-05-06 10:00:00,1
+20096,50096,389,E11.9,10,Type 2 diabetes mellitus without complications,2023-10-23 10:00:00,1
+20096,50096,390,I10,10,Essential hypertension,2023-10-23 10:00:00,1
+20096,50096,391,E78.5,10,Hyperlipidemia,2023-10-23 10:00:00,1
+20096,50096,392,M54.5,10,Low back pain,2023-10-23 10:00:00,1
+20097,50097,393,I50.9,10,"Heart failure, unspecified",2025-01-28 10:00:00,1
+20097,50097,394,I10,10,Essential hypertension,2025-01-28 10:00:00,1
+20097,50097,395,I25.10,10,Atherosclerotic heart disease,2025-01-28 10:00:00,1
+20097,50097,396,M54.5,10,Low back pain,2025-01-28 10:00:00,1
+20098,50098,397,J18.9,10,"Pneumonia, unspecified organism",2023-07-10 10:00:00,1
+20098,50098,398,J44.1,10,COPD with acute exacerbation,2023-07-10 10:00:00,1
+20098,50098,399,J45.909,10,"Asthma, unspecified",2023-07-10 10:00:00,1
+20098,50098,400,I10,10,Essential hypertension,2023-07-10 10:00:00,1
+20099,50099,401,A41.9,10,"Sepsis, unspecified organism",2024-01-05 10:00:00,1
+20099,50099,402,N39.0,10,Urinary tract infection,2024-01-05 10:00:00,1
+20099,50099,403,J06.9,10,Acute upper respiratory infection,2024-01-05 10:00:00,1
+20099,50099,404,I10,10,Essential hypertension,2024-01-05 10:00:00,1
+20100,50100,405,N18.3,10,"Chronic kidney disease, stage 3",2024-11-02 10:00:00,1
+20100,50100,406,I10,10,Essential hypertension,2024-11-02 10:00:00,1
+20100,50100,407,E87.1,10,Hyponatremia,2024-11-02 10:00:00,1

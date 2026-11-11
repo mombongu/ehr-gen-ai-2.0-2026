@@ -1,0 +1,496 @@
+prescription_id,subject_id,hadm_id,starttime,stoptime,drug,dose_val_rx,dose_unit_rx,route,frequency,rationale,synthetic_flag
+1,20001,50001,2024-10-12 09:00:00,2024-10-19 09:00:00,Metformin,500,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+2,20001,50001,2024-10-12 09:00:00,2024-10-19 09:00:00,Insulin glargine,500,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+3,20001,50001,2024-10-12 09:00:00,2024-10-19 09:00:00,Atorvastatin,5,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+4,20001,50001,2024-10-12 09:00:00,2024-10-19 09:00:00,Lisinopril,5,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+5,20001,50001,2024-10-12 09:00:00,2024-10-19 09:00:00,Cetirizine,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+6,20001,50001,2024-10-12 09:00:00,2024-10-19 09:00:00,Losartan,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+7,20002,50002,2024-06-20 09:00:00,2024-06-24 09:00:00,Furosemide,10,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+8,20002,50002,2024-06-20 09:00:00,2024-06-24 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+9,20002,50002,2024-06-20 09:00:00,2024-06-24 09:00:00,Metoprolol,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+10,20002,50002,2024-06-20 09:00:00,2024-06-24 09:00:00,Amlodipine,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+11,20002,50002,2024-06-20 09:00:00,2024-06-24 09:00:00,Losartan,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+12,20003,50003,2023-09-01 09:00:00,2023-09-02 09:00:00,Albuterol,10,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+13,20003,50003,2023-09-01 09:00:00,2023-09-02 09:00:00,Prednisone,10,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+14,20003,50003,2023-09-01 09:00:00,2023-09-02 09:00:00,Azithromycin,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+15,20003,50003,2023-09-01 09:00:00,2023-09-02 09:00:00,Fluticasone,10,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+16,20003,50003,2023-09-01 09:00:00,2023-09-02 09:00:00,Sertraline,10,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+17,20003,50003,2023-09-01 09:00:00,2023-09-02 09:00:00,Ibuprofen,5,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+18,20004,50004,2024-02-16 09:00:00,2024-02-20 09:00:00,Ceftriaxone,500,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+19,20004,50004,2024-02-16 09:00:00,2024-02-20 09:00:00,Vancomycin,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+20,20004,50004,2024-02-16 09:00:00,2024-02-20 09:00:00,Acetaminophen,500,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+21,20004,50004,2024-02-16 09:00:00,2024-02-20 09:00:00,Azithromycin,10,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+22,20004,50004,2024-02-16 09:00:00,2024-02-20 09:00:00,Omeprazole,20,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+23,20004,50004,2024-02-16 09:00:00,2024-02-20 09:00:00,Levothyroxine,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+24,20005,50005,2023-12-04 09:00:00,2023-12-12 09:00:00,Furosemide,500,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+25,20005,50005,2023-12-04 09:00:00,2023-12-12 09:00:00,Amlodipine,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+26,20005,50005,2023-12-04 09:00:00,2023-12-12 09:00:00,Lisinopril,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+27,20005,50005,2023-12-04 09:00:00,2023-12-12 09:00:00,Levothyroxine,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+28,20005,50005,2023-12-04 09:00:00,2023-12-12 09:00:00,Cetirizine,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+29,20006,50006,2023-09-09 09:00:00,2023-09-10 09:00:00,Metformin,500,mg,INHALATION,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+30,20006,50006,2023-09-09 09:00:00,2023-09-10 09:00:00,Insulin glargine,10,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+31,20006,50006,2023-09-09 09:00:00,2023-09-10 09:00:00,Atorvastatin,500,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+32,20006,50006,2023-09-09 09:00:00,2023-09-10 09:00:00,Lisinopril,500,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+33,20006,50006,2023-09-09 09:00:00,2023-09-10 09:00:00,Losartan,500,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+34,20006,50006,2023-09-09 09:00:00,2023-09-10 09:00:00,Sertraline,10,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+35,20007,50007,2024-10-11 09:00:00,2024-10-14 09:00:00,Furosemide,500,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+36,20007,50007,2024-10-11 09:00:00,2024-10-14 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+37,20007,50007,2024-10-11 09:00:00,2024-10-14 09:00:00,Metoprolol,20,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+38,20007,50007,2024-10-11 09:00:00,2024-10-14 09:00:00,Amlodipine,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+39,20007,50007,2024-10-11 09:00:00,2024-10-14 09:00:00,Cetirizine,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+40,20007,50007,2024-10-11 09:00:00,2024-10-14 09:00:00,Hydrocortisone,20,mg,INHALATION,PRN,Synthetic cardiac scenario; patient-specific indication not represented.,1
+41,20008,50008,2023-11-22 09:00:00,2023-11-27 09:00:00,Albuterol,500,mg,PO,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+42,20008,50008,2023-11-22 09:00:00,2023-11-27 09:00:00,Prednisone,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+43,20008,50008,2023-11-22 09:00:00,2023-11-27 09:00:00,Azithromycin,10,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+44,20008,50008,2023-11-22 09:00:00,2023-11-27 09:00:00,Fluticasone,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+45,20008,50008,2023-11-22 09:00:00,2023-11-27 09:00:00,Denosumab,5,mg,PO,once a month,Synthetic respiratory scenario; patient-specific indication not represented.,1
+46,20008,50008,2023-11-22 09:00:00,2023-11-27 09:00:00,Omeprazole,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+47,20009,50009,2024-10-06 09:00:00,2024-10-10 09:00:00,Ceftriaxone,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+48,20009,50009,2024-10-06 09:00:00,2024-10-10 09:00:00,Vancomycin,5,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+49,20009,50009,2024-10-06 09:00:00,2024-10-10 09:00:00,Acetaminophen,500,mg,IV,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+50,20009,50009,2024-10-06 09:00:00,2024-10-10 09:00:00,Azithromycin,5,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+51,20009,50009,2024-10-06 09:00:00,2024-10-10 09:00:00,Hydrocortisone,20,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+52,20010,50010,2024-06-18 09:00:00,2024-06-20 09:00:00,Furosemide,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+53,20010,50010,2024-06-18 09:00:00,2024-06-20 09:00:00,Amlodipine,20,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+54,20010,50010,2024-06-18 09:00:00,2024-06-20 09:00:00,Lisinopril,10,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+55,20010,50010,2024-06-18 09:00:00,2024-06-20 09:00:00,Levothyroxine,500,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+56,20011,50011,2024-10-29 09:00:00,2024-11-04 09:00:00,Metformin,10,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+57,20011,50011,2024-10-29 09:00:00,2024-11-04 09:00:00,Insulin glargine,10,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+58,20011,50011,2024-10-29 09:00:00,2024-11-04 09:00:00,Atorvastatin,10,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+59,20011,50011,2024-10-29 09:00:00,2024-11-04 09:00:00,Lisinopril,20,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+60,20011,50011,2024-10-29 09:00:00,2024-11-04 09:00:00,Cetirizine,500,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+61,20011,50011,2024-10-29 09:00:00,2024-11-04 09:00:00,Losartan,500,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+62,20012,50012,2023-07-07 09:00:00,2023-07-15 09:00:00,Furosemide,20,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+63,20012,50012,2023-07-07 09:00:00,2023-07-15 09:00:00,Lisinopril,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+64,20012,50012,2023-07-07 09:00:00,2023-07-15 09:00:00,Metoprolol,20,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+65,20012,50012,2023-07-07 09:00:00,2023-07-15 09:00:00,Amlodipine,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+66,20012,50012,2023-07-07 09:00:00,2023-07-15 09:00:00,Denosumab,10,mg,PO,once a month,Synthetic cardiac scenario; patient-specific indication not represented.,1
+67,20012,50012,2023-07-07 09:00:00,2023-07-15 09:00:00,Ibuprofen,500,mg,IV,PRN,Synthetic cardiac scenario; patient-specific indication not represented.,1
+68,20013,50013,2024-09-04 09:00:00,2024-09-05 09:00:00,Albuterol,20,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+69,20013,50013,2024-09-04 09:00:00,2024-09-05 09:00:00,Prednisone,5,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+70,20013,50013,2024-09-04 09:00:00,2024-09-05 09:00:00,Azithromycin,5,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+71,20013,50013,2024-09-04 09:00:00,2024-09-05 09:00:00,Fluticasone,20,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+72,20013,50013,2024-09-04 09:00:00,2024-09-05 09:00:00,Ibuprofen,500,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+73,20014,50014,2024-01-24 09:00:00,2024-01-25 09:00:00,Ceftriaxone,20,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+74,20014,50014,2024-01-24 09:00:00,2024-01-25 09:00:00,Vancomycin,20,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+75,20014,50014,2024-01-24 09:00:00,2024-01-25 09:00:00,Acetaminophen,5,mg,IV,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+76,20014,50014,2024-01-24 09:00:00,2024-01-25 09:00:00,Azithromycin,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+77,20014,50014,2024-01-24 09:00:00,2024-01-25 09:00:00,Denosumab,10,mg,PO,once a month,Synthetic infection scenario; patient-specific indication not represented.,1
+78,20015,50015,2024-05-21 09:00:00,2024-05-23 09:00:00,Furosemide,10,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+79,20015,50015,2024-05-21 09:00:00,2024-05-23 09:00:00,Amlodipine,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+80,20015,50015,2024-05-21 09:00:00,2024-05-23 09:00:00,Lisinopril,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+81,20015,50015,2024-05-21 09:00:00,2024-05-23 09:00:00,Levothyroxine,5,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+82,20016,50016,2024-02-03 09:00:00,2024-02-04 09:00:00,Metformin,20,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+83,20016,50016,2024-02-03 09:00:00,2024-02-04 09:00:00,Insulin glargine,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+84,20016,50016,2024-02-03 09:00:00,2024-02-04 09:00:00,Atorvastatin,500,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+85,20016,50016,2024-02-03 09:00:00,2024-02-04 09:00:00,Lisinopril,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+86,20017,50017,2023-11-08 09:00:00,2023-11-11 09:00:00,Furosemide,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+87,20017,50017,2023-11-08 09:00:00,2023-11-11 09:00:00,Lisinopril,20,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+88,20017,50017,2023-11-08 09:00:00,2023-11-11 09:00:00,Metoprolol,500,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+89,20017,50017,2023-11-08 09:00:00,2023-11-11 09:00:00,Amlodipine,20,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+90,20017,50017,2023-11-08 09:00:00,2023-11-11 09:00:00,Sertraline,500,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+91,20018,50018,2024-05-23 09:00:00,2024-05-27 09:00:00,Albuterol,20,mg,PO,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+92,20018,50018,2024-05-23 09:00:00,2024-05-27 09:00:00,Prednisone,5,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+93,20018,50018,2024-05-23 09:00:00,2024-05-27 09:00:00,Azithromycin,10,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+94,20018,50018,2024-05-23 09:00:00,2024-05-27 09:00:00,Fluticasone,20,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+95,20018,50018,2024-05-23 09:00:00,2024-05-27 09:00:00,Denosumab,20,mg,PO,once a month,Synthetic respiratory scenario; patient-specific indication not represented.,1
+96,20018,50018,2024-05-23 09:00:00,2024-05-27 09:00:00,Infliximab,5,mg,INHALATION,once a month,Synthetic respiratory scenario; patient-specific indication not represented.,1
+97,20019,50019,2023-08-31 09:00:00,2023-09-07 09:00:00,Ceftriaxone,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+98,20019,50019,2023-08-31 09:00:00,2023-09-07 09:00:00,Vancomycin,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+99,20019,50019,2023-08-31 09:00:00,2023-09-07 09:00:00,Acetaminophen,10,mg,INHALATION,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+100,20019,50019,2023-08-31 09:00:00,2023-09-07 09:00:00,Azithromycin,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+101,20020,50020,2024-09-19 09:00:00,2024-09-23 09:00:00,Furosemide,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+102,20020,50020,2024-09-19 09:00:00,2024-09-23 09:00:00,Amlodipine,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+103,20020,50020,2024-09-19 09:00:00,2024-09-23 09:00:00,Lisinopril,500,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+104,20020,50020,2024-09-19 09:00:00,2024-09-23 09:00:00,Levothyroxine,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+105,20020,50020,2024-09-19 09:00:00,2024-09-23 09:00:00,Losartan,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+106,20021,50021,2024-04-14 09:00:00,2024-04-17 09:00:00,Metformin,500,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+107,20021,50021,2024-04-14 09:00:00,2024-04-17 09:00:00,Insulin glargine,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+108,20021,50021,2024-04-14 09:00:00,2024-04-17 09:00:00,Atorvastatin,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+109,20021,50021,2024-04-14 09:00:00,2024-04-17 09:00:00,Lisinopril,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+110,20021,50021,2024-04-14 09:00:00,2024-04-17 09:00:00,Sertraline,500,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+111,20021,50021,2024-04-14 09:00:00,2024-04-17 09:00:00,Omeprazole,5,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+112,20022,50022,2024-02-04 09:00:00,2024-02-11 09:00:00,Furosemide,5,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+113,20022,50022,2024-02-04 09:00:00,2024-02-11 09:00:00,Lisinopril,20,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+114,20022,50022,2024-02-04 09:00:00,2024-02-11 09:00:00,Metoprolol,10,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+115,20022,50022,2024-02-04 09:00:00,2024-02-11 09:00:00,Amlodipine,10,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+116,20023,50023,2025-04-07 09:00:00,2025-04-11 09:00:00,Albuterol,20,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+117,20023,50023,2025-04-07 09:00:00,2025-04-11 09:00:00,Prednisone,20,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+118,20023,50023,2025-04-07 09:00:00,2025-04-11 09:00:00,Azithromycin,20,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+119,20023,50023,2025-04-07 09:00:00,2025-04-11 09:00:00,Fluticasone,10,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+120,20024,50024,2024-07-07 09:00:00,2024-07-12 09:00:00,Ceftriaxone,500,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+121,20024,50024,2024-07-07 09:00:00,2024-07-12 09:00:00,Vancomycin,500,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+122,20024,50024,2024-07-07 09:00:00,2024-07-12 09:00:00,Acetaminophen,10,mg,INHALATION,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+123,20024,50024,2024-07-07 09:00:00,2024-07-12 09:00:00,Azithromycin,10,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+124,20024,50024,2024-07-07 09:00:00,2024-07-12 09:00:00,Omeprazole,500,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+125,20025,50025,2024-08-01 09:00:00,2024-08-05 09:00:00,Furosemide,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+126,20025,50025,2024-08-01 09:00:00,2024-08-05 09:00:00,Amlodipine,500,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+127,20025,50025,2024-08-01 09:00:00,2024-08-05 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+128,20025,50025,2024-08-01 09:00:00,2024-08-05 09:00:00,Levothyroxine,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+129,20025,50025,2024-08-01 09:00:00,2024-08-05 09:00:00,Losartan,20,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+130,20026,50026,2024-05-28 09:00:00,2024-06-03 09:00:00,Metformin,10,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+131,20026,50026,2024-05-28 09:00:00,2024-06-03 09:00:00,Insulin glargine,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+132,20026,50026,2024-05-28 09:00:00,2024-06-03 09:00:00,Atorvastatin,20,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+133,20026,50026,2024-05-28 09:00:00,2024-06-03 09:00:00,Lisinopril,500,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+134,20026,50026,2024-05-28 09:00:00,2024-06-03 09:00:00,Hydrocortisone,20,mg,INHALATION,PRN,Synthetic diabetes scenario; patient-specific indication not represented.,1
+135,20027,50027,2025-02-01 09:00:00,2025-02-08 09:00:00,Furosemide,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+136,20027,50027,2025-02-01 09:00:00,2025-02-08 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+137,20027,50027,2025-02-01 09:00:00,2025-02-08 09:00:00,Metoprolol,500,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+138,20027,50027,2025-02-01 09:00:00,2025-02-08 09:00:00,Amlodipine,10,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+139,20028,50028,2024-11-26 09:00:00,2024-11-29 09:00:00,Albuterol,10,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+140,20028,50028,2024-11-26 09:00:00,2024-11-29 09:00:00,Prednisone,500,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+141,20028,50028,2024-11-26 09:00:00,2024-11-29 09:00:00,Azithromycin,10,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+142,20028,50028,2024-11-26 09:00:00,2024-11-29 09:00:00,Fluticasone,5,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+143,20029,50029,2024-01-06 09:00:00,2024-01-09 09:00:00,Ceftriaxone,500,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+144,20029,50029,2024-01-06 09:00:00,2024-01-09 09:00:00,Vancomycin,20,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+145,20029,50029,2024-01-06 09:00:00,2024-01-09 09:00:00,Acetaminophen,10,mg,INHALATION,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+146,20029,50029,2024-01-06 09:00:00,2024-01-09 09:00:00,Azithromycin,500,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+147,20030,50030,2023-12-08 09:00:00,2023-12-13 09:00:00,Furosemide,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+148,20030,50030,2023-12-08 09:00:00,2023-12-13 09:00:00,Amlodipine,10,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+149,20030,50030,2023-12-08 09:00:00,2023-12-13 09:00:00,Lisinopril,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+150,20030,50030,2023-12-08 09:00:00,2023-12-13 09:00:00,Levothyroxine,20,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+151,20030,50030,2023-12-08 09:00:00,2023-12-13 09:00:00,Sertraline,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+152,20030,50030,2023-12-08 09:00:00,2023-12-13 09:00:00,Losartan,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+153,20031,50031,2025-04-14 09:00:00,2025-04-15 09:00:00,Metformin,500,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+154,20031,50031,2025-04-14 09:00:00,2025-04-15 09:00:00,Insulin glargine,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+155,20031,50031,2025-04-14 09:00:00,2025-04-15 09:00:00,Atorvastatin,5,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+156,20031,50031,2025-04-14 09:00:00,2025-04-15 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+157,20032,50032,2023-07-09 09:00:00,2023-07-17 09:00:00,Furosemide,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+158,20032,50032,2023-07-09 09:00:00,2023-07-17 09:00:00,Lisinopril,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+159,20032,50032,2023-07-09 09:00:00,2023-07-17 09:00:00,Metoprolol,20,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+160,20032,50032,2023-07-09 09:00:00,2023-07-17 09:00:00,Amlodipine,20,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+161,20032,50032,2023-07-09 09:00:00,2023-07-17 09:00:00,Ibuprofen,10,mg,IV,PRN,Synthetic cardiac scenario; patient-specific indication not represented.,1
+162,20032,50032,2023-07-09 09:00:00,2023-07-17 09:00:00,Acetaminophen,500,mg,IV,PRN,Synthetic cardiac scenario; patient-specific indication not represented.,1
+163,20033,50033,2024-05-13 09:00:00,2024-05-17 09:00:00,Albuterol,20,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+164,20033,50033,2024-05-13 09:00:00,2024-05-17 09:00:00,Prednisone,10,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+165,20033,50033,2024-05-13 09:00:00,2024-05-17 09:00:00,Azithromycin,20,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+166,20033,50033,2024-05-13 09:00:00,2024-05-17 09:00:00,Fluticasone,10,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+167,20034,50034,2024-03-26 09:00:00,2024-04-03 09:00:00,Ceftriaxone,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+168,20034,50034,2024-03-26 09:00:00,2024-04-03 09:00:00,Vancomycin,10,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+169,20034,50034,2024-03-26 09:00:00,2024-04-03 09:00:00,Acetaminophen,10,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+170,20034,50034,2024-03-26 09:00:00,2024-04-03 09:00:00,Azithromycin,500,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+171,20034,50034,2024-03-26 09:00:00,2024-04-03 09:00:00,Denosumab,20,mg,PO,once a month,Synthetic infection scenario; patient-specific indication not represented.,1
+172,20035,50035,2024-10-19 09:00:00,2024-10-22 09:00:00,Furosemide,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+173,20035,50035,2024-10-19 09:00:00,2024-10-22 09:00:00,Amlodipine,500,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+174,20035,50035,2024-10-19 09:00:00,2024-10-22 09:00:00,Lisinopril,500,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+175,20035,50035,2024-10-19 09:00:00,2024-10-22 09:00:00,Levothyroxine,500,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+176,20036,50036,2024-10-28 09:00:00,2024-10-31 09:00:00,Metformin,500,mg,INHALATION,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+177,20036,50036,2024-10-28 09:00:00,2024-10-31 09:00:00,Insulin glargine,5,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+178,20036,50036,2024-10-28 09:00:00,2024-10-31 09:00:00,Atorvastatin,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+179,20036,50036,2024-10-28 09:00:00,2024-10-31 09:00:00,Lisinopril,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+180,20037,50037,2024-06-01 09:00:00,2024-06-04 09:00:00,Furosemide,10,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+181,20037,50037,2024-06-01 09:00:00,2024-06-04 09:00:00,Lisinopril,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+182,20037,50037,2024-06-01 09:00:00,2024-06-04 09:00:00,Metoprolol,20,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+183,20037,50037,2024-06-01 09:00:00,2024-06-04 09:00:00,Amlodipine,500,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+184,20037,50037,2024-06-01 09:00:00,2024-06-04 09:00:00,Cetirizine,10,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+185,20037,50037,2024-06-01 09:00:00,2024-06-04 09:00:00,Sertraline,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+186,20038,50038,2025-04-03 09:00:00,2025-04-07 09:00:00,Albuterol,10,mg,PO,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+187,20038,50038,2025-04-03 09:00:00,2025-04-07 09:00:00,Prednisone,5,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+188,20038,50038,2025-04-03 09:00:00,2025-04-07 09:00:00,Azithromycin,5,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+189,20038,50038,2025-04-03 09:00:00,2025-04-07 09:00:00,Fluticasone,20,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+190,20038,50038,2025-04-03 09:00:00,2025-04-07 09:00:00,Denosumab,10,mg,INHALATION,once a month,Synthetic respiratory scenario; patient-specific indication not represented.,1
+191,20038,50038,2025-04-03 09:00:00,2025-04-07 09:00:00,Hydrocortisone,5,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+192,20039,50039,2025-03-31 09:00:00,2025-04-05 09:00:00,Ceftriaxone,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+193,20039,50039,2025-03-31 09:00:00,2025-04-05 09:00:00,Vancomycin,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+194,20039,50039,2025-03-31 09:00:00,2025-04-05 09:00:00,Acetaminophen,500,mg,IV,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+195,20039,50039,2025-03-31 09:00:00,2025-04-05 09:00:00,Azithromycin,20,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+196,20039,50039,2025-03-31 09:00:00,2025-04-05 09:00:00,Hydrocortisone,10,mg,IV,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+197,20040,50040,2023-10-01 09:00:00,2023-10-07 09:00:00,Furosemide,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+198,20040,50040,2023-10-01 09:00:00,2023-10-07 09:00:00,Amlodipine,500,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+199,20040,50040,2023-10-01 09:00:00,2023-10-07 09:00:00,Lisinopril,20,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+200,20040,50040,2023-10-01 09:00:00,2023-10-07 09:00:00,Levothyroxine,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+201,20040,50040,2023-10-01 09:00:00,2023-10-07 09:00:00,Omeprazole,20,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+202,20040,50040,2023-10-01 09:00:00,2023-10-07 09:00:00,Infliximab,20,mg,INHALATION,once a month,Synthetic renal scenario; patient-specific indication not represented.,1
+203,20041,50041,2023-07-31 09:00:00,2023-08-03 09:00:00,Metformin,500,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+204,20041,50041,2023-07-31 09:00:00,2023-08-03 09:00:00,Insulin glargine,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+205,20041,50041,2023-07-31 09:00:00,2023-08-03 09:00:00,Atorvastatin,500,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+206,20041,50041,2023-07-31 09:00:00,2023-08-03 09:00:00,Lisinopril,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+207,20041,50041,2023-07-31 09:00:00,2023-08-03 09:00:00,Sertraline,10,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+208,20042,50042,2024-06-17 09:00:00,2024-06-18 09:00:00,Furosemide,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+209,20042,50042,2024-06-17 09:00:00,2024-06-18 09:00:00,Lisinopril,10,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+210,20042,50042,2024-06-17 09:00:00,2024-06-18 09:00:00,Metoprolol,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+211,20042,50042,2024-06-17 09:00:00,2024-06-18 09:00:00,Amlodipine,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+212,20043,50043,2025-01-05 09:00:00,2025-01-11 09:00:00,Albuterol,20,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+213,20043,50043,2025-01-05 09:00:00,2025-01-11 09:00:00,Prednisone,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+214,20043,50043,2025-01-05 09:00:00,2025-01-11 09:00:00,Azithromycin,5,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+215,20043,50043,2025-01-05 09:00:00,2025-01-11 09:00:00,Fluticasone,5,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+216,20043,50043,2025-01-05 09:00:00,2025-01-11 09:00:00,Acetaminophen,500,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+217,20044,50044,2023-11-12 09:00:00,2023-11-13 09:00:00,Ceftriaxone,500,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+218,20044,50044,2023-11-12 09:00:00,2023-11-13 09:00:00,Vancomycin,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+219,20044,50044,2023-11-12 09:00:00,2023-11-13 09:00:00,Acetaminophen,5,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+220,20044,50044,2023-11-12 09:00:00,2023-11-13 09:00:00,Azithromycin,500,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+221,20045,50045,2023-08-26 09:00:00,2023-09-01 09:00:00,Furosemide,10,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+222,20045,50045,2023-08-26 09:00:00,2023-09-01 09:00:00,Amlodipine,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+223,20045,50045,2023-08-26 09:00:00,2023-09-01 09:00:00,Lisinopril,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+224,20045,50045,2023-08-26 09:00:00,2023-09-01 09:00:00,Levothyroxine,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+225,20045,50045,2023-08-26 09:00:00,2023-09-01 09:00:00,Gabapentin,5,mg,IV,twice daily,Synthetic renal scenario; patient-specific indication not represented.,1
+226,20046,50046,2025-04-05 09:00:00,2025-04-07 09:00:00,Metformin,20,mg,INHALATION,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+227,20046,50046,2025-04-05 09:00:00,2025-04-07 09:00:00,Insulin glargine,5,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+228,20046,50046,2025-04-05 09:00:00,2025-04-07 09:00:00,Atorvastatin,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+229,20046,50046,2025-04-05 09:00:00,2025-04-07 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+230,20046,50046,2025-04-05 09:00:00,2025-04-07 09:00:00,Omeprazole,500,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+231,20046,50046,2025-04-05 09:00:00,2025-04-07 09:00:00,Ibuprofen,20,mg,INHALATION,PRN,Synthetic diabetes scenario; patient-specific indication not represented.,1
+232,20047,50047,2024-03-26 09:00:00,2024-04-03 09:00:00,Furosemide,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+233,20047,50047,2024-03-26 09:00:00,2024-04-03 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+234,20047,50047,2024-03-26 09:00:00,2024-04-03 09:00:00,Metoprolol,20,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+235,20047,50047,2024-03-26 09:00:00,2024-04-03 09:00:00,Amlodipine,5,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+236,20047,50047,2024-03-26 09:00:00,2024-04-03 09:00:00,Omeprazole,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+237,20047,50047,2024-03-26 09:00:00,2024-04-03 09:00:00,Denosumab,5,mg,IV,once a month,Synthetic cardiac scenario; patient-specific indication not represented.,1
+238,20048,50048,2023-11-05 09:00:00,2023-11-09 09:00:00,Albuterol,10,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+239,20048,50048,2023-11-05 09:00:00,2023-11-09 09:00:00,Prednisone,10,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+240,20048,50048,2023-11-05 09:00:00,2023-11-09 09:00:00,Azithromycin,5,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+241,20048,50048,2023-11-05 09:00:00,2023-11-09 09:00:00,Fluticasone,10,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+242,20049,50049,2023-11-06 09:00:00,2023-11-11 09:00:00,Ceftriaxone,20,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+243,20049,50049,2023-11-06 09:00:00,2023-11-11 09:00:00,Vancomycin,10,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+244,20049,50049,2023-11-06 09:00:00,2023-11-11 09:00:00,Acetaminophen,5,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+245,20049,50049,2023-11-06 09:00:00,2023-11-11 09:00:00,Azithromycin,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+246,20050,50050,2024-08-21 09:00:00,2024-08-28 09:00:00,Furosemide,10,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+247,20050,50050,2024-08-21 09:00:00,2024-08-28 09:00:00,Amlodipine,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+248,20050,50050,2024-08-21 09:00:00,2024-08-28 09:00:00,Lisinopril,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+249,20050,50050,2024-08-21 09:00:00,2024-08-28 09:00:00,Levothyroxine,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+250,20051,50051,2024-02-13 09:00:00,2024-02-20 09:00:00,Metformin,20,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+251,20051,50051,2024-02-13 09:00:00,2024-02-20 09:00:00,Insulin glargine,500,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+252,20051,50051,2024-02-13 09:00:00,2024-02-20 09:00:00,Atorvastatin,5,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+253,20051,50051,2024-02-13 09:00:00,2024-02-20 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+254,20052,50052,2024-01-16 09:00:00,2024-01-24 09:00:00,Furosemide,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+255,20052,50052,2024-01-16 09:00:00,2024-01-24 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+256,20052,50052,2024-01-16 09:00:00,2024-01-24 09:00:00,Metoprolol,10,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+257,20052,50052,2024-01-16 09:00:00,2024-01-24 09:00:00,Amlodipine,5,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+258,20053,50053,2025-03-08 09:00:00,2025-03-09 09:00:00,Albuterol,5,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+259,20053,50053,2025-03-08 09:00:00,2025-03-09 09:00:00,Prednisone,20,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+260,20053,50053,2025-03-08 09:00:00,2025-03-09 09:00:00,Azithromycin,10,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+261,20053,50053,2025-03-08 09:00:00,2025-03-09 09:00:00,Fluticasone,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+262,20054,50054,2024-01-23 09:00:00,2024-01-24 09:00:00,Ceftriaxone,20,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+263,20054,50054,2024-01-23 09:00:00,2024-01-24 09:00:00,Vancomycin,500,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+264,20054,50054,2024-01-23 09:00:00,2024-01-24 09:00:00,Acetaminophen,10,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+265,20054,50054,2024-01-23 09:00:00,2024-01-24 09:00:00,Azithromycin,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+266,20054,50054,2024-01-23 09:00:00,2024-01-24 09:00:00,Denosumab,10,mg,PO,once a month,Synthetic infection scenario; patient-specific indication not represented.,1
+267,20054,50054,2024-01-23 09:00:00,2024-01-24 09:00:00,Sertraline,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+268,20055,50055,2024-07-04 09:00:00,2024-07-10 09:00:00,Furosemide,10,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+269,20055,50055,2024-07-04 09:00:00,2024-07-10 09:00:00,Amlodipine,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+270,20055,50055,2024-07-04 09:00:00,2024-07-10 09:00:00,Lisinopril,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+271,20055,50055,2024-07-04 09:00:00,2024-07-10 09:00:00,Levothyroxine,20,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+272,20056,50056,2023-07-25 09:00:00,2023-07-30 09:00:00,Metformin,10,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+273,20056,50056,2023-07-25 09:00:00,2023-07-30 09:00:00,Insulin glargine,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+274,20056,50056,2023-07-25 09:00:00,2023-07-30 09:00:00,Atorvastatin,500,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+275,20056,50056,2023-07-25 09:00:00,2023-07-30 09:00:00,Lisinopril,5,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+276,20056,50056,2023-07-25 09:00:00,2023-07-30 09:00:00,Hydrocortisone,10,mg,PO,PRN,Synthetic diabetes scenario; patient-specific indication not represented.,1
+277,20057,50057,2024-06-24 09:00:00,2024-06-26 09:00:00,Furosemide,10,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+278,20057,50057,2024-06-24 09:00:00,2024-06-26 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+279,20057,50057,2024-06-24 09:00:00,2024-06-26 09:00:00,Metoprolol,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+280,20057,50057,2024-06-24 09:00:00,2024-06-26 09:00:00,Amlodipine,5,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+281,20058,50058,2023-07-24 09:00:00,2023-07-27 09:00:00,Albuterol,5,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+282,20058,50058,2023-07-24 09:00:00,2023-07-27 09:00:00,Prednisone,20,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+283,20058,50058,2023-07-24 09:00:00,2023-07-27 09:00:00,Azithromycin,10,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+284,20058,50058,2023-07-24 09:00:00,2023-07-27 09:00:00,Fluticasone,5,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+285,20059,50059,2024-10-13 09:00:00,2024-10-16 09:00:00,Ceftriaxone,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+286,20059,50059,2024-10-13 09:00:00,2024-10-16 09:00:00,Vancomycin,5,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+287,20059,50059,2024-10-13 09:00:00,2024-10-16 09:00:00,Acetaminophen,10,mg,IV,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+288,20059,50059,2024-10-13 09:00:00,2024-10-16 09:00:00,Azithromycin,5,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+289,20059,50059,2024-10-13 09:00:00,2024-10-16 09:00:00,Omeprazole,500,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+290,20059,50059,2024-10-13 09:00:00,2024-10-16 09:00:00,Levothyroxine,10,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+291,20060,50060,2025-01-08 09:00:00,2025-01-10 09:00:00,Furosemide,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+292,20060,50060,2025-01-08 09:00:00,2025-01-10 09:00:00,Amlodipine,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+293,20060,50060,2025-01-08 09:00:00,2025-01-10 09:00:00,Lisinopril,10,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+294,20060,50060,2025-01-08 09:00:00,2025-01-10 09:00:00,Levothyroxine,10,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+295,20061,50061,2023-07-22 09:00:00,2023-07-25 09:00:00,Metformin,20,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+296,20061,50061,2023-07-22 09:00:00,2023-07-25 09:00:00,Insulin glargine,20,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+297,20061,50061,2023-07-22 09:00:00,2023-07-25 09:00:00,Atorvastatin,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+298,20061,50061,2023-07-22 09:00:00,2023-07-25 09:00:00,Lisinopril,500,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+299,20061,50061,2023-07-22 09:00:00,2023-07-25 09:00:00,Denosumab,10,mg,PO,once a month,Synthetic diabetes scenario; patient-specific indication not represented.,1
+300,20061,50061,2023-07-22 09:00:00,2023-07-25 09:00:00,Cetirizine,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+301,20062,50062,2024-03-05 09:00:00,2024-03-10 09:00:00,Furosemide,10,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+302,20062,50062,2024-03-05 09:00:00,2024-03-10 09:00:00,Lisinopril,5,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+303,20062,50062,2024-03-05 09:00:00,2024-03-10 09:00:00,Metoprolol,10,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+304,20062,50062,2024-03-05 09:00:00,2024-03-10 09:00:00,Amlodipine,10,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+305,20062,50062,2024-03-05 09:00:00,2024-03-10 09:00:00,Ibuprofen,10,mg,INHALATION,PRN,Synthetic cardiac scenario; patient-specific indication not represented.,1
+306,20063,50063,2024-12-18 09:00:00,2024-12-21 09:00:00,Albuterol,10,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+307,20063,50063,2024-12-18 09:00:00,2024-12-21 09:00:00,Prednisone,500,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+308,20063,50063,2024-12-18 09:00:00,2024-12-21 09:00:00,Azithromycin,10,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+309,20063,50063,2024-12-18 09:00:00,2024-12-21 09:00:00,Fluticasone,10,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+310,20063,50063,2024-12-18 09:00:00,2024-12-21 09:00:00,Hydrocortisone,20,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+311,20063,50063,2024-12-18 09:00:00,2024-12-21 09:00:00,Gabapentin,500,mg,INHALATION,twice daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+312,20064,50064,2024-02-27 09:00:00,2024-02-29 09:00:00,Ceftriaxone,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+313,20064,50064,2024-02-27 09:00:00,2024-02-29 09:00:00,Vancomycin,20,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+314,20064,50064,2024-02-27 09:00:00,2024-02-29 09:00:00,Acetaminophen,10,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+315,20064,50064,2024-02-27 09:00:00,2024-02-29 09:00:00,Azithromycin,20,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+316,20064,50064,2024-02-27 09:00:00,2024-02-29 09:00:00,Denosumab,20,mg,IV,once a month,Synthetic infection scenario; patient-specific indication not represented.,1
+317,20065,50065,2025-03-09 09:00:00,2025-03-16 09:00:00,Furosemide,500,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+318,20065,50065,2025-03-09 09:00:00,2025-03-16 09:00:00,Amlodipine,20,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+319,20065,50065,2025-03-09 09:00:00,2025-03-16 09:00:00,Lisinopril,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+320,20065,50065,2025-03-09 09:00:00,2025-03-16 09:00:00,Levothyroxine,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+321,20065,50065,2025-03-09 09:00:00,2025-03-16 09:00:00,Hydrocortisone,10,mg,IV,PRN,Synthetic renal scenario; patient-specific indication not represented.,1
+322,20066,50066,2024-03-08 09:00:00,2024-03-15 09:00:00,Metformin,500,mg,INHALATION,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+323,20066,50066,2024-03-08 09:00:00,2024-03-15 09:00:00,Insulin glargine,10,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+324,20066,50066,2024-03-08 09:00:00,2024-03-15 09:00:00,Atorvastatin,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+325,20066,50066,2024-03-08 09:00:00,2024-03-15 09:00:00,Lisinopril,5,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+326,20066,50066,2024-03-08 09:00:00,2024-03-15 09:00:00,Sertraline,5,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+327,20067,50067,2024-03-26 09:00:00,2024-04-03 09:00:00,Furosemide,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+328,20067,50067,2024-03-26 09:00:00,2024-04-03 09:00:00,Lisinopril,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+329,20067,50067,2024-03-26 09:00:00,2024-04-03 09:00:00,Metoprolol,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+330,20067,50067,2024-03-26 09:00:00,2024-04-03 09:00:00,Amlodipine,10,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+331,20067,50067,2024-03-26 09:00:00,2024-04-03 09:00:00,Hydrocortisone,5,mg,PO,PRN,Synthetic cardiac scenario; patient-specific indication not represented.,1
+332,20067,50067,2024-03-26 09:00:00,2024-04-03 09:00:00,Infliximab,5,mg,PO,once a month,Synthetic cardiac scenario; patient-specific indication not represented.,1
+333,20068,50068,2024-10-01 09:00:00,2024-10-06 09:00:00,Albuterol,20,mg,PO,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+334,20068,50068,2024-10-01 09:00:00,2024-10-06 09:00:00,Prednisone,20,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+335,20068,50068,2024-10-01 09:00:00,2024-10-06 09:00:00,Azithromycin,5,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+336,20068,50068,2024-10-01 09:00:00,2024-10-06 09:00:00,Fluticasone,500,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+337,20068,50068,2024-10-01 09:00:00,2024-10-06 09:00:00,Levothyroxine,10,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+338,20069,50069,2024-02-09 09:00:00,2024-02-11 09:00:00,Ceftriaxone,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+339,20069,50069,2024-02-09 09:00:00,2024-02-11 09:00:00,Vancomycin,5,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+340,20069,50069,2024-02-09 09:00:00,2024-02-11 09:00:00,Acetaminophen,500,mg,INHALATION,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+341,20069,50069,2024-02-09 09:00:00,2024-02-11 09:00:00,Azithromycin,10,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+342,20070,50070,2024-12-09 09:00:00,2024-12-15 09:00:00,Furosemide,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+343,20070,50070,2024-12-09 09:00:00,2024-12-15 09:00:00,Amlodipine,10,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+344,20070,50070,2024-12-09 09:00:00,2024-12-15 09:00:00,Lisinopril,10,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+345,20070,50070,2024-12-09 09:00:00,2024-12-15 09:00:00,Levothyroxine,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+346,20070,50070,2024-12-09 09:00:00,2024-12-15 09:00:00,Infliximab,500,mg,INHALATION,once a month,Synthetic renal scenario; patient-specific indication not represented.,1
+347,20070,50070,2024-12-09 09:00:00,2024-12-15 09:00:00,Ibuprofen,5,mg,IV,PRN,Synthetic renal scenario; patient-specific indication not represented.,1
+348,20071,50071,2024-06-06 09:00:00,2024-06-10 09:00:00,Metformin,5,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+349,20071,50071,2024-06-06 09:00:00,2024-06-10 09:00:00,Insulin glargine,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+350,20071,50071,2024-06-06 09:00:00,2024-06-10 09:00:00,Atorvastatin,10,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+351,20071,50071,2024-06-06 09:00:00,2024-06-10 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+352,20071,50071,2024-06-06 09:00:00,2024-06-10 09:00:00,Acetaminophen,500,mg,PO,PRN,Synthetic diabetes scenario; patient-specific indication not represented.,1
+353,20071,50071,2024-06-06 09:00:00,2024-06-10 09:00:00,Losartan,5,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+354,20072,50072,2025-04-12 09:00:00,2025-04-18 09:00:00,Furosemide,10,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+355,20072,50072,2025-04-12 09:00:00,2025-04-18 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+356,20072,50072,2025-04-12 09:00:00,2025-04-18 09:00:00,Metoprolol,500,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+357,20072,50072,2025-04-12 09:00:00,2025-04-18 09:00:00,Amlodipine,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+358,20073,50073,2024-04-14 09:00:00,2024-04-18 09:00:00,Albuterol,20,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+359,20073,50073,2024-04-14 09:00:00,2024-04-18 09:00:00,Prednisone,20,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+360,20073,50073,2024-04-14 09:00:00,2024-04-18 09:00:00,Azithromycin,5,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+361,20073,50073,2024-04-14 09:00:00,2024-04-18 09:00:00,Fluticasone,500,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+362,20073,50073,2024-04-14 09:00:00,2024-04-18 09:00:00,Hydrocortisone,500,mg,INHALATION,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+363,20074,50074,2024-02-10 09:00:00,2024-02-17 09:00:00,Ceftriaxone,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+364,20074,50074,2024-02-10 09:00:00,2024-02-17 09:00:00,Vancomycin,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+365,20074,50074,2024-02-10 09:00:00,2024-02-17 09:00:00,Acetaminophen,20,mg,IV,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+366,20074,50074,2024-02-10 09:00:00,2024-02-17 09:00:00,Azithromycin,5,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+367,20075,50075,2025-02-01 09:00:00,2025-02-02 09:00:00,Furosemide,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+368,20075,50075,2025-02-01 09:00:00,2025-02-02 09:00:00,Amlodipine,20,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+369,20075,50075,2025-02-01 09:00:00,2025-02-02 09:00:00,Lisinopril,5,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+370,20075,50075,2025-02-01 09:00:00,2025-02-02 09:00:00,Levothyroxine,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+371,20075,50075,2025-02-01 09:00:00,2025-02-02 09:00:00,Hydrocortisone,20,mg,PO,PRN,Synthetic renal scenario; patient-specific indication not represented.,1
+372,20075,50075,2025-02-01 09:00:00,2025-02-02 09:00:00,Omeprazole,10,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+373,20076,50076,2024-09-29 09:00:00,2024-10-07 09:00:00,Metformin,20,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+374,20076,50076,2024-09-29 09:00:00,2024-10-07 09:00:00,Insulin glargine,5,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+375,20076,50076,2024-09-29 09:00:00,2024-10-07 09:00:00,Atorvastatin,10,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+376,20076,50076,2024-09-29 09:00:00,2024-10-07 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+377,20076,50076,2024-09-29 09:00:00,2024-10-07 09:00:00,Hydrocortisone,10,mg,PO,PRN,Synthetic diabetes scenario; patient-specific indication not represented.,1
+378,20076,50076,2024-09-29 09:00:00,2024-10-07 09:00:00,Infliximab,5,mg,PO,once a month,Synthetic diabetes scenario; patient-specific indication not represented.,1
+379,20077,50077,2025-02-22 09:00:00,2025-02-28 09:00:00,Furosemide,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+380,20077,50077,2025-02-22 09:00:00,2025-02-28 09:00:00,Lisinopril,500,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+381,20077,50077,2025-02-22 09:00:00,2025-02-28 09:00:00,Metoprolol,10,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+382,20077,50077,2025-02-22 09:00:00,2025-02-28 09:00:00,Amlodipine,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+383,20078,50078,2024-10-16 09:00:00,2024-10-24 09:00:00,Albuterol,500,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+384,20078,50078,2024-10-16 09:00:00,2024-10-24 09:00:00,Prednisone,5,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+385,20078,50078,2024-10-16 09:00:00,2024-10-24 09:00:00,Azithromycin,10,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+386,20078,50078,2024-10-16 09:00:00,2024-10-24 09:00:00,Fluticasone,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+387,20078,50078,2024-10-16 09:00:00,2024-10-24 09:00:00,Omeprazole,500,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+388,20079,50079,2024-01-13 09:00:00,2024-01-15 09:00:00,Ceftriaxone,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+389,20079,50079,2024-01-13 09:00:00,2024-01-15 09:00:00,Vancomycin,500,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+390,20079,50079,2024-01-13 09:00:00,2024-01-15 09:00:00,Acetaminophen,5,mg,INHALATION,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+391,20079,50079,2024-01-13 09:00:00,2024-01-15 09:00:00,Azithromycin,500,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+392,20079,50079,2024-01-13 09:00:00,2024-01-15 09:00:00,Omeprazole,5,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+393,20080,50080,2024-05-18 09:00:00,2024-05-21 09:00:00,Furosemide,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+394,20080,50080,2024-05-18 09:00:00,2024-05-21 09:00:00,Amlodipine,500,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+395,20080,50080,2024-05-18 09:00:00,2024-05-21 09:00:00,Lisinopril,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+396,20080,50080,2024-05-18 09:00:00,2024-05-21 09:00:00,Levothyroxine,20,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+397,20080,50080,2024-05-18 09:00:00,2024-05-21 09:00:00,Gabapentin,5,mg,INHALATION,twice daily,Synthetic renal scenario; patient-specific indication not represented.,1
+398,20081,50081,2024-03-26 09:00:00,2024-04-03 09:00:00,Metformin,20,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+399,20081,50081,2024-03-26 09:00:00,2024-04-03 09:00:00,Insulin glargine,20,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+400,20081,50081,2024-03-26 09:00:00,2024-04-03 09:00:00,Atorvastatin,5,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+401,20081,50081,2024-03-26 09:00:00,2024-04-03 09:00:00,Lisinopril,20,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+402,20082,50082,2025-03-21 09:00:00,2025-03-26 09:00:00,Furosemide,500,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+403,20082,50082,2025-03-21 09:00:00,2025-03-26 09:00:00,Lisinopril,10,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+404,20082,50082,2025-03-21 09:00:00,2025-03-26 09:00:00,Metoprolol,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+405,20082,50082,2025-03-21 09:00:00,2025-03-26 09:00:00,Amlodipine,5,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+406,20082,50082,2025-03-21 09:00:00,2025-03-26 09:00:00,Denosumab,10,mg,IV,once a month,Synthetic cardiac scenario; patient-specific indication not represented.,1
+407,20083,50083,2024-09-10 09:00:00,2024-09-18 09:00:00,Albuterol,10,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+408,20083,50083,2024-09-10 09:00:00,2024-09-18 09:00:00,Prednisone,10,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+409,20083,50083,2024-09-10 09:00:00,2024-09-18 09:00:00,Azithromycin,500,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+410,20083,50083,2024-09-10 09:00:00,2024-09-18 09:00:00,Fluticasone,20,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+411,20083,50083,2024-09-10 09:00:00,2024-09-18 09:00:00,Levothyroxine,10,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+412,20084,50084,2024-04-28 09:00:00,2024-05-01 09:00:00,Ceftriaxone,10,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+413,20084,50084,2024-04-28 09:00:00,2024-05-01 09:00:00,Vancomycin,5,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+414,20084,50084,2024-04-28 09:00:00,2024-05-01 09:00:00,Acetaminophen,20,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+415,20084,50084,2024-04-28 09:00:00,2024-05-01 09:00:00,Azithromycin,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+416,20084,50084,2024-04-28 09:00:00,2024-05-01 09:00:00,Losartan,5,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+417,20084,50084,2024-04-28 09:00:00,2024-05-01 09:00:00,Denosumab,10,mg,PO,once a month,Synthetic infection scenario; patient-specific indication not represented.,1
+418,20085,50085,2025-04-20 09:00:00,2025-04-28 09:00:00,Furosemide,20,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+419,20085,50085,2025-04-20 09:00:00,2025-04-28 09:00:00,Amlodipine,500,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+420,20085,50085,2025-04-20 09:00:00,2025-04-28 09:00:00,Lisinopril,500,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+421,20085,50085,2025-04-20 09:00:00,2025-04-28 09:00:00,Levothyroxine,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+422,20086,50086,2024-02-05 09:00:00,2024-02-06 09:00:00,Metformin,10,mg,PO,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+423,20086,50086,2024-02-05 09:00:00,2024-02-06 09:00:00,Insulin glargine,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+424,20086,50086,2024-02-05 09:00:00,2024-02-06 09:00:00,Atorvastatin,5,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+425,20086,50086,2024-02-05 09:00:00,2024-02-06 09:00:00,Lisinopril,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+426,20087,50087,2025-04-20 09:00:00,2025-04-28 09:00:00,Furosemide,5,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+427,20087,50087,2025-04-20 09:00:00,2025-04-28 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+428,20087,50087,2025-04-20 09:00:00,2025-04-28 09:00:00,Metoprolol,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+429,20087,50087,2025-04-20 09:00:00,2025-04-28 09:00:00,Amlodipine,10,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+430,20088,50088,2023-07-15 09:00:00,2023-07-21 09:00:00,Albuterol,5,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+431,20088,50088,2023-07-15 09:00:00,2023-07-21 09:00:00,Prednisone,500,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+432,20088,50088,2023-07-15 09:00:00,2023-07-21 09:00:00,Azithromycin,5,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+433,20088,50088,2023-07-15 09:00:00,2023-07-21 09:00:00,Fluticasone,20,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+434,20088,50088,2023-07-15 09:00:00,2023-07-21 09:00:00,Denosumab,20,mg,PO,once a month,Synthetic respiratory scenario; patient-specific indication not represented.,1
+435,20089,50089,2024-01-10 09:00:00,2024-01-17 09:00:00,Ceftriaxone,20,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+436,20089,50089,2024-01-10 09:00:00,2024-01-17 09:00:00,Vancomycin,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+437,20089,50089,2024-01-10 09:00:00,2024-01-17 09:00:00,Acetaminophen,5,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+438,20089,50089,2024-01-10 09:00:00,2024-01-17 09:00:00,Azithromycin,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+439,20090,50090,2023-09-22 09:00:00,2023-09-28 09:00:00,Furosemide,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+440,20090,50090,2023-09-22 09:00:00,2023-09-28 09:00:00,Amlodipine,5,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+441,20090,50090,2023-09-22 09:00:00,2023-09-28 09:00:00,Lisinopril,500,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+442,20090,50090,2023-09-22 09:00:00,2023-09-28 09:00:00,Levothyroxine,5,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+443,20090,50090,2023-09-22 09:00:00,2023-09-28 09:00:00,Infliximab,10,mg,IV,once a month,Synthetic renal scenario; patient-specific indication not represented.,1
+444,20090,50090,2023-09-22 09:00:00,2023-09-28 09:00:00,Acetaminophen,10,mg,IV,PRN,Synthetic renal scenario; patient-specific indication not represented.,1
+445,20091,50091,2024-01-31 09:00:00,2024-02-04 09:00:00,Metformin,5,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+446,20091,50091,2024-01-31 09:00:00,2024-02-04 09:00:00,Insulin glargine,500,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+447,20091,50091,2024-01-31 09:00:00,2024-02-04 09:00:00,Atorvastatin,5,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+448,20091,50091,2024-01-31 09:00:00,2024-02-04 09:00:00,Lisinopril,10,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+449,20091,50091,2024-01-31 09:00:00,2024-02-04 09:00:00,Sertraline,20,mg,INHALATION,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+450,20091,50091,2024-01-31 09:00:00,2024-02-04 09:00:00,Losartan,10,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+451,20092,50092,2025-01-17 09:00:00,2025-01-22 09:00:00,Furosemide,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+452,20092,50092,2025-01-17 09:00:00,2025-01-22 09:00:00,Lisinopril,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+453,20092,50092,2025-01-17 09:00:00,2025-01-22 09:00:00,Metoprolol,10,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+454,20092,50092,2025-01-17 09:00:00,2025-01-22 09:00:00,Amlodipine,5,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+455,20093,50093,2025-04-18 09:00:00,2025-04-21 09:00:00,Albuterol,10,mg,PO,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+456,20093,50093,2025-04-18 09:00:00,2025-04-21 09:00:00,Prednisone,10,mg,PO,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+457,20093,50093,2025-04-18 09:00:00,2025-04-21 09:00:00,Azithromycin,20,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+458,20093,50093,2025-04-18 09:00:00,2025-04-21 09:00:00,Fluticasone,5,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+459,20093,50093,2025-04-18 09:00:00,2025-04-21 09:00:00,Hydrocortisone,5,mg,PO,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+460,20094,50094,2023-11-03 09:00:00,2023-11-07 09:00:00,Ceftriaxone,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+461,20094,50094,2023-11-03 09:00:00,2023-11-07 09:00:00,Vancomycin,10,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+462,20094,50094,2023-11-03 09:00:00,2023-11-07 09:00:00,Acetaminophen,5,mg,PO,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+463,20094,50094,2023-11-03 09:00:00,2023-11-07 09:00:00,Azithromycin,500,mg,PO,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+464,20094,50094,2023-11-03 09:00:00,2023-11-07 09:00:00,Losartan,10,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+465,20094,50094,2023-11-03 09:00:00,2023-11-07 09:00:00,Hydrocortisone,5,mg,INHALATION,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+466,20095,50095,2024-05-06 09:00:00,2024-05-09 09:00:00,Furosemide,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+467,20095,50095,2024-05-06 09:00:00,2024-05-09 09:00:00,Amlodipine,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+468,20095,50095,2024-05-06 09:00:00,2024-05-09 09:00:00,Lisinopril,5,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+469,20095,50095,2024-05-06 09:00:00,2024-05-09 09:00:00,Levothyroxine,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+470,20096,50096,2023-10-23 09:00:00,2023-10-25 09:00:00,Metformin,20,mg,IV,twice daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+471,20096,50096,2023-10-23 09:00:00,2023-10-25 09:00:00,Insulin glargine,5,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+472,20096,50096,2023-10-23 09:00:00,2023-10-25 09:00:00,Atorvastatin,10,mg,PO,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+473,20096,50096,2023-10-23 09:00:00,2023-10-25 09:00:00,Lisinopril,20,mg,IV,once daily,Synthetic diabetes scenario; patient-specific indication not represented.,1
+474,20096,50096,2023-10-23 09:00:00,2023-10-25 09:00:00,Hydrocortisone,5,mg,IV,PRN,Synthetic diabetes scenario; patient-specific indication not represented.,1
+475,20096,50096,2023-10-23 09:00:00,2023-10-25 09:00:00,Infliximab,5,mg,IV,once a month,Synthetic diabetes scenario; patient-specific indication not represented.,1
+476,20097,50097,2025-01-28 09:00:00,2025-02-01 09:00:00,Furosemide,20,mg,INHALATION,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+477,20097,50097,2025-01-28 09:00:00,2025-02-01 09:00:00,Lisinopril,10,mg,IV,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+478,20097,50097,2025-01-28 09:00:00,2025-02-01 09:00:00,Metoprolol,10,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+479,20097,50097,2025-01-28 09:00:00,2025-02-01 09:00:00,Amlodipine,500,mg,PO,once daily,Synthetic cardiac scenario; patient-specific indication not represented.,1
+480,20098,50098,2023-07-10 09:00:00,2023-07-15 09:00:00,Albuterol,500,mg,IV,PRN,Synthetic respiratory scenario; patient-specific indication not represented.,1
+481,20098,50098,2023-07-10 09:00:00,2023-07-15 09:00:00,Prednisone,20,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+482,20098,50098,2023-07-10 09:00:00,2023-07-15 09:00:00,Azithromycin,20,mg,INHALATION,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+483,20098,50098,2023-07-10 09:00:00,2023-07-15 09:00:00,Fluticasone,20,mg,IV,once daily,Synthetic respiratory scenario; patient-specific indication not represented.,1
+484,20099,50099,2024-01-05 09:00:00,2024-01-12 09:00:00,Ceftriaxone,5,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+485,20099,50099,2024-01-05 09:00:00,2024-01-12 09:00:00,Vancomycin,5,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+486,20099,50099,2024-01-05 09:00:00,2024-01-12 09:00:00,Acetaminophen,5,mg,INHALATION,PRN,Synthetic infection scenario; patient-specific indication not represented.,1
+487,20099,50099,2024-01-05 09:00:00,2024-01-12 09:00:00,Azithromycin,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+488,20099,50099,2024-01-05 09:00:00,2024-01-12 09:00:00,Sertraline,20,mg,IV,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+489,20099,50099,2024-01-05 09:00:00,2024-01-12 09:00:00,Omeprazole,5,mg,INHALATION,once daily,Synthetic infection scenario; patient-specific indication not represented.,1
+490,20100,50100,2024-11-02 09:00:00,2024-11-10 09:00:00,Furosemide,500,mg,INHALATION,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+491,20100,50100,2024-11-02 09:00:00,2024-11-10 09:00:00,Amlodipine,20,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+492,20100,50100,2024-11-02 09:00:00,2024-11-10 09:00:00,Lisinopril,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+493,20100,50100,2024-11-02 09:00:00,2024-11-10 09:00:00,Levothyroxine,5,mg,PO,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+494,20100,50100,2024-11-02 09:00:00,2024-11-10 09:00:00,Losartan,10,mg,IV,once daily,Synthetic renal scenario; patient-specific indication not represented.,1
+495,20100,50100,2024-11-02 09:00:00,2024-11-10 09:00:00,Gabapentin,500,mg,INHALATION,twice daily,Synthetic renal scenario; patient-specific indication not represented.,1

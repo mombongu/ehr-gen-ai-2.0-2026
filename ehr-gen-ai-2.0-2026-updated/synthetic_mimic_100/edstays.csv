@@ -1,0 +1,11 @@
+subject_id,stay_id,hadm_id,intime,outtime,arrival_transport,disposition,chief_complaint,patient_status,synthetic_flag
+20001,70001,60001,2025-06-01 09:00:00,,EMS,IN PROGRESS,Weakness and elevated blood glucose,NEW,1
+20002,70002,60002,2025-06-01 09:00:00,,WALK IN,IN PROGRESS,Shortness of breath and leg swelling,NEW,1
+20003,70003,60003,2025-06-01 09:00:00,,EMS,IN PROGRESS,Cough and difficulty breathing,NEW,1
+20004,70004,60004,2025-06-01 09:00:00,,EMS,IN PROGRESS,Fever and generalized weakness,NEW,1
+20005,70005,60005,2025-06-01 09:00:00,,EMS,IN PROGRESS,Fatigue and reduced urine output,NEW,1
+20006,70006,60006,2025-06-01 09:00:00,,WALK IN,IN PROGRESS,Weakness and elevated blood glucose,NEW,1
+20007,70007,60007,2025-06-01 09:00:00,,EMS,IN PROGRESS,Shortness of breath and leg swelling,NEW,1
+20008,70008,60008,2025-06-01 09:00:00,,WALK IN,IN PROGRESS,Cough and difficulty breathing,NEW,1
+20009,70009,60009,2025-06-01 09:00:00,,WALK IN,IN PROGRESS,Fever and generalized weakness,NEW,1
+20010,70010,60010,2025-06-01 09:00:00,,EMS,IN PROGRESS,Fatigue and reduced urine output,NEW,1
